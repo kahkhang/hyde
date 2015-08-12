@@ -1,0 +1,740 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Ang Mo Kio Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_ANG_MO_KIO_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.84718202313154,
+          1.3723121190241034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bedok Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_BEDOK_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.84718202313154,
+          1.3723121190241034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bukit Batok Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_BUKIT_BATOK_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.746922,
+          1.351504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bukit Merah Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_BUKIT_MERAH_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.817883,
+          1.283319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Choa Chu Kang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_CHOA_CHU_KANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.750827,
+          1.382287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Clementi Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_CLEMENTI_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.765783,
+          1.312762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Geylang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_GEYLANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.887298,
+          1.319423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Hougang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_HOUGANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.888993,
+          1.370017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Jurong Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_JURONG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.730743,
+          1.34982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Marine Parade Polyclinic",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.907897,
+          1.302465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Outram Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_OUTRAM_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.838181,
+          1.279726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Pasir Ris Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_PASIR_RIS_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.959525,
+          1.368311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Queenstown Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_QUEENSTOWN_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.80106,
+          1.298346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Sengkang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_SENGKANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894315,
+          1.392755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Tampines Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_TAMPINES_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.946017,
+          1.357425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Toa Payoh Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_TOA_PAYOH_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.859049,
+          1.334632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Woodlands Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_WOODLANDS_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.775235,
+          1.430928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Yishun Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_YISHUN_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837173,
+          1.423463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Alexandra Hospita",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.802,
+          1.2866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Changi General Hospital (CGH)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9497,
+          1.3405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Khoo Teck Puat Hospital (KTPH)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.83876,
+          1.42414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "National University Hospital (NUH)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7831,
+          1.2942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Parkway East Hospital (formerly East Shore Hospital)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9087,
+          1.3152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Raffles Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8573,
+          1.3013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Singapore General Hospital (SGH)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8351,
+          1.2798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Tan Tock Seng Hospital (TTSH)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8454,
+          1.321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Gleneagles Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.82,
+          1.3074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Mount Alvernia Hospital (Mt Alvernia)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8377,
+          1.342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Ang Mo Kio - Thye Hua Kwan Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8403,
+          1.3839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Bright Vision Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8781,
+          1.3718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Kwong Wai Shiu Hospital And Nursing Home",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8595,
+          1.3172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Ren Ci Long Term Care (former Ren Ci Hospital & Medicare Centre)",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8866,
+          1.3817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Ren Ci Community Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8456,
+          1.3227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "Ren Ci Nursing Home",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8468,
+          1.3239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "St Andrew&#039;s Community Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.949,
+          1.3416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "1652500499",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "hospital",
+        "name": "St Luke&#039;s Hospital",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7419,
+          1.3496
+        ]
+      }
+    }
+  ]
+}

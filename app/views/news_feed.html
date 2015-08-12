@@ -1,0 +1,93 @@
+<paper-dialog id="news" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+    <paper-drawer-panel left-drawer>
+      <div drawer>
+        <paper-header-panel mode="standard">
+        <div class="paper-header">
+          <p id="sidebar-header">News Feed</p>
+        </div>
+        
+        <div class="fit">
+          <section onclick="newsMenuSelect()">
+            <paper-menu selected="0" role="menu" id="newsMenu">
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="language" item-icon></iron-icon>World News
+                </paper-icon-item>
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="language" item-icon></iron-icon>Singapore News
+                </paper-icon-item>
+              </paper-item>              
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="account-balance" item-icon></iron-icon>Housing News
+                </paper-icon-item>                
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:local-pharmacy" item-icon></iron-icon>Health News
+                </paper-icon-item>                
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="create" item-icon></iron-icon>Education News
+                </paper-icon-item>                
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:traffic" item-icon></iron-icon>Traffic News
+                </paper-icon-item>                
+              </paper-item>
+        
+            </paper-menu>
+          </section>
+        </div>
+        </paper-header-panel>
+      </div>
+      
+      <div main id="news-sidebar-main" style="margin:none;">
+        <iron-pages selected="0">
+          <div>
+            <news-list-rss url="http://www.channelnewsasia.com/rss/latest_cna_world_rss.xml"></news-list-rss>
+          </div>
+          
+          <div>
+            <news-list-rss url="http://www.channelnewsasia.com/rss/latest_cna_sg_rss.xml"></news-list-rss>
+          </div>
+          
+          <div>
+            <news-list-rss url="https://news.google.de/news/feeds?pz=1&cf=all&ned=en_sg&hl=en&q=singapore+housing&output=rss"></news-list-rss>
+          </div>
+          
+          <div>
+            <news-list-rss url="https://news.google.de/news/feeds?pz=1&cf=all&ned=en_sg&hl=en&q=singapore+health&output=rss"></news-list-rss>
+          </div>
+          
+          <div>
+            <news-list-rss url="https://news.google.de/news/feeds?pz=1&cf=all&ned=en_sg&hl=en&q=singapore+education&output=rss"></news-list-rss>
+          </div>          
+
+          <div>
+            <news-list-rss url="https://news.google.de/news/feeds?pz=1&cf=all&ned=en_sg&hl=en&q=singapore+road+traffic&output=rss"></news-list-rss>
+          </div>
+
+        </iron-pages>
+      </div>
+    </paper-drawer-panel>
+</paper-dialog> 
+
+<script>
+
+  function newsMenuSelect() {
+    var dialog = document.getElementById("news");
+    var pages = dialog.querySelector('iron-pages');
+    var menu = document.getElementById("newsMenu");
+    pages.selected = menu.selected;
+  }
+</script>

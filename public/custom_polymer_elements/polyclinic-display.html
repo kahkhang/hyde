@@ -1,0 +1,68 @@
+<dom-module id="polyclinic-display">
+    <style>
+        .polyclinic {
+          margin-left: 58px;
+          min-height: 50px;
+          cursor: pointer;
+        }        
+        
+        .name {
+            font-weight: bold;
+        }
+        
+        .desc {
+            color: #333;
+        }
+    </style>
+    
+    <template>
+        <paper-material>
+            <div class="polyclinic" elevation="1" on-mouseover="mouseover" 
+                on-mouseout="mouseout" on-click="click">
+                <div class="name">{{polyclinic.name}}</div>
+                <div class="body">
+                    <span>{{desc}}</span>
+            </div>            
+        </paper-material>
+
+    </template>
+    
+    <script>
+        Polymer({
+            is: "polyclinic-display",
+            ready: function() {
+                var isClicked = false;
+            },
+            properties: {
+                polyclinic: {
+                    type: Object,
+                    computed: "getDesc(polyclinic)"
+                },
+                desc: {
+                    type: String
+                }
+            },
+            getDesc: function(polyclinic) {
+                return ((polyclinic.waitingNumber) ? ('<div>Number of waiting patients: ' +
+              polyclinic.waitingNumber + '<div><div>Waiting Time: ' + (polyclinic.waitingTime || 0) + ' minutes</div>') : ("Polyclinic is closed!"));
+                 
+            },
+            mouseover: function() {
+                allCustomLayers['Polyclinics'][this.polyclinic.properties.id].openPopup();
+            },
+            mouseout: function() {
+                allCustomLayers['Polyclinics'][this.polyclinic.properties.id].closePopup();
+            },
+            click: function() {
+                this.isClicked = !this.isClicked;
+                if (isClicked) {
+                    mouseover;
+                } 
+                else {
+                    mouseout;
+                }
+            }
+        })
+    </script>
+    
+</dom-module>

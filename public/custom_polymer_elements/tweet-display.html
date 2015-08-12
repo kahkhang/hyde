@@ -1,0 +1,230 @@
+<dom-module id="tweet-display">
+    <style>
+      .tweet {
+        margin-left: 58px;
+        min-height: 50px;
+      }
+      
+      .tweet .tweet-header a {
+        text-decoration: none;
+      }
+      
+      .tweet .tweet-header a img.user-pic {
+        float: left;
+        margin-top: 3px;
+        margin-left: -58px;
+        width: 48px;
+        height: 48px;
+      }
+      
+      .tweet .tweet-header a span.username {
+        font-weight: bold;
+      }
+      
+      .tweet .tweet-header a span.feels {
+        font-weight: bold;
+      }
+      
+      .tweet .tweet-body a {
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 2px;
+      }
+      
+      .tweet .tweet-footer {
+        font-size: 0.8em;
+        font-weight: bold;
+        display:table;
+        border-collapse:collapse;
+        width:100%;
+      }
+      
+      .tweet .tweet-footer > div {
+          display:table-cell;
+          vertical-align: middle;
+      }
+      
+      .tweet .tweet-timestamp {
+        font-weight: bold;
+        color: #666666;
+      }
+      
+      .right {
+        width: 24px;
+      }
+      
+      #tweetReply, #statusMsg {
+        display: none;
+      }
+      
+      .tweet-reply-msg {
+        font-size: 0.9em;
+        margin-left: 58px;
+        font-weight: bold;
+        color: #0D47A1;
+      }
+      
+      .mdl-textfield__input, .mdl-textfield__label{
+        font-size: 12px;
+      }
+
+      paper-textarea::shadow .mirror-text,
+      paper-textarea::shadow #textarea,
+      paper-textarea::shadow .input-content.style-scope.paper-input-container label.style-scope.paper-textarea {
+        font-size: 12px;
+        line-height: 16.7999992370605px;
+
+      }
+    </style>
+    
+    <template>
+        <iron-ajax method="POST" url="/replyTweet" id="tweetAjax" handle-as="json" on-response="replyResponse" 
+          debounce-duration="300"></iron-ajax>
+          <div class="tweet">
+          <div class="tweet-header">
+            <a href="{{tweet.displayProperties.screen_name_url}}" target="_blank">
+              <img class="user-pic" src="{{tweet.user.profile_image_url_https}}"/>
+              <span class="username">{{tweet.user.name}}</span> feels <span class="feels" style="{{tweet.colorCSS}}">{{tweet.feels}}</span>
+            </a>
+          </div>
+          <div class="tweet-body">
+            <a class="tweet-link" href="{{tweet.displayProperties.tweet_link}}" target="_blank" id="tweet-link"></a>
+          </div>
+          
+          <div class="tweet-footer">
+            <div class="left" id="tweetDetails">
+              <div>{{tweet.address}}</div>
+              <div class="tweet-timestamp">
+                <span>Tweeted on </span><span>{{tweet.created_human}}</span>
+              </div>
+            </div>
+            <div class="right">
+              <paper-icon-button icon="reply" on-click="showReplyFields"></paper-icon-button>
+            </div>
+          </div>
+          
+          <div class="tweet-footer" id="tweetReply">
+            <div class="left">
+              <form action="#">
+                <paper-textarea label="Reply to tweet" no-label-float="true" size="1" id="replyText" char-counter rows="10" maxlength="140" id="replyText"></paper-textarea>
+                <!--
+                <div class="mdl-textfield mdl-js-textfield" style="width: 100%; padding: 0">
+                  <textarea class="mdl-textfield__input" type="text" rows= "3" id="replyText" maxlength="140"></textarea>
+                  <label class="mdl-textfield__label" for="replyText">Reply To Tweet</label>
+                </div>
+                -->
+              </form>
+            </div>
+            <div class="right">
+              <paper-icon-button icon="send" on-click="sendStatus"></paper-icon-button>
+            </div>
+          </div>
+          
+        </div>
+        <div class="tweet-footer" id="statusMsg">
+          <span class="tweet-reply-msg">{{replymsg}}</span>
+        </div>
+
+    </template>
+   
+  <script>
+    function unquoteattr(s) {
+        s = ('' + s); /* Forces the conversion to string type. */
+        s = s
+            .replace(/\r\n/g, '\n') /* To do before the next replacement. */ 
+            .replace(/[\r\n]/, '\n')
+            .replace(/&#13;&#10;/g, '\n') /* These 3 replacements keep whitespaces. */
+            .replace(/&#1[03];/g, '\n')
+            .replace(/&#9;/g, '\t')
+            .replace(/&gt;/g, '>') /* The 4 other predefined entities required. */
+            .replace(/&lt;/g, '<')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'")
+            ;
+         /* This MUST be the last replacement. */
+        s = s.replace(/&amp;/g, '&');
+        return s;
+    }
+    
+    Polymer({
+      is: "tweet-display",
+      ready: function() {
+          this.$['tweet-link'].innerHTML = twemoji.parse(this.tweet.text, {
+            attributes: 
+              function attributesCallback(icon, variant) {
+                return {
+                  width: '12px',
+                  height: '12px'
+                };
+              }
+          });
+
+            
+      },
+      properties: {
+        tweet: {
+            type: Object,
+            computed: "getTweet(tweetjson)"
+        },
+        tweetjson: {
+            type: String
+        },
+        tweetid: {
+          type: String
+        },
+        replymsg: {
+          type: String,
+          value: ""
+        }
+      },
+      showReplyFields : function() {
+        document.querySelector('.mirror-text').style.width = $(this.$.tweetDetails).width() + 'px';
+        this.$.tweetReply.style.display = 'block';
+        //access that
+      },
+      getTweet : function(tweetjson){
+          //console.log(tweetjson);
+          var tweet = JSON.parse(unquoteattr(tweetjson));
+          //console.log(tweet);
+          tweet.displayProperties = {};
+          tweet.displayProperties.screen_name_url = "http://twitter.com/" + tweet.user.screen_name;
+          tweet.displayProperties.tweet_link = "http://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
+          tweet.address = tweet.address || tweet.place.country;
+          tweet.colorCSS = "color: " + tweet.color + ";"
+          tweetid = tweet.id;
+          return tweet;
+      },
+      sendStatus: function(){
+        /*
+        this.tweetReply = {};
+        
+        var status = this.$.replyText.value;
+        console.log(status);
+      	var id = 1407063558;
+      	*/
+      	//var id = tweetid;
+      	
+      	//console.log(this.tweet.id + " " + this.$.replyText.value);
+      	
+      	this.$.tweetAjax.params = {id: this.tweet.id, status: this.$.replyText.value };
+        
+        if (this.$.replyText.value == "") {
+          this.replymsg = "Error: Empty Reply!";
+        }
+        
+        else {
+          this.$.tweetAjax.generateRequest();
+          
+        }
+        
+      },
+      replyResponse: function(request) {
+        this.replymsg = "Reply Tweeted!";
+        this.$.statusMsg.style.display = 'block';
+        console.log(request.detail.response);
+        console.log(this.$.ajax.lastResponse);
+      }
+    });
+  </script>
+  
+</dom-module>

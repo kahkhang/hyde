@@ -1,0 +1,92 @@
+autocomplete search (regex): 
+http://www.onemap.sg/API/services.svc/basicSearch?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&returnGeom=1&wc=SEARCHVAL%20LIKE%20%27467B%20ADMIRAL$%27&otptFlds=CATEGORY&nohaxr=10
+
+properties by poi:
+http://www.onemap.sg/RQAPI/Service1.svc/RetrievePropertiesByPOI?token=da927bb1c360b8d20783e67f0b8b2f2f457b9688c4bf544d6097d5a9626481043398d6309d7541e20ceba62eff161504&callback={callback}&POI=26076.488468393873,48247.21192574719&buffer=1000&Propsrc=H&PropType=01,03,05,08,02,04,06&fromdate=JUN-14&todate=JUN-15&minprice=1&maxprice=10000
+
+traffic:
+cameras: http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?&camera=LTCI
+erp: http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?&erp=ERPI&1436512458451
+    erp rates: http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?&erp=ERPRATES|CT1
+parking: http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?&pinfo=PLAI&1436512628655
+cameras: http://www.onemap.sg/LTACameraImages/17051511.jpg
+incidents: http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?&incidents=II
+
+"happiest path"
+
+bus stops:
+http://www.onemap.sg/API/services.svc/mashupData?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&themeName=Bus_Stop&extents=32120.132992549305,38920.27667534501,33266.6912856659,39576.56186499873
+
+details:
+http://www.onemap.sg/API/services.svc/COMMUNITYCLUBS/XY/36919.1416,41723.5655?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr
+
+http://app.pub.gov.sg/WaterLevel/GetWLInfo.aspx?type=WL
+contentVar3 = "<br/><b>Water Level(m):</b>" + WLV + "<br/><b>Observation Time:</b>" + OT + "<br/><a href=\"WaterLevelReport.aspx?stationid=" + SId + "&stationname=" + stationName1 + "&X=" + SX + "&Y=" + SY + "&Flag=" + Flag + "\" target='_blank'>More Info</a></span>";
+function handleWLLoad(data) {
+    var TXT_DELIM = "$#$";
+    var REC_DELIM = "$@$";
+
+    if (data.length > 0) {
+        var strRec = data.split(REC_DELIM);
+        for (var i = 0; i < strRec.length - 1; i++) {
+
+            var strData = strRec[i].split(TXT_DELIM);
+
+            var SId = strData[0];
+            var SName = strData[1];
+            var SX = strData[2];
+            var SY = strData[3];
+            var WLV = strData[4];
+            var Flag = strData[5];
+            var OT = strData[6];
+
+            PlaceWLV(SId, SName, SX, SY, WLV, OT, Flag);
+        }
+    }
+}
+
+business query: http://www.onemap.sg/bizQuery/Service1.svc/disp?token=03aa7086ea7661524e190b98412adba191df085b554ea07fb50cc582fff742c0560d90dea5a27d3dc483125378486ea2&dist=250&status=Live&code=All&coord=25912.86504531369|48026.26058801117
+business details list: http://www.onemap.sg/bizQuery/Service1.svc/getdetail?token=03aa7086ea7661524e190b98412adba191df085b554ea07fb50cc582fff742c0560d90dea5a27d3dc483125378486ea2&coord=26134.4|48189.7&status=Live&code=All&pno=1
+
+http://bit.ly/1FeukYq 
+
+scraped url:
+
+  async.eachLimit(polyclinics, 1, function(polyclinic, callback) {
+    if(!polyclinic.link || !polyclinic.group) callback();
+    if(polyclinic.group == "SINGHEALTH"){
+      request(polyclinic.link, function(error, response, body) {
+        var $;
+        if (!error && response.statusCode == 200) {
+          $ = cheerio.load(body);
+          polyclinic.scrapingUrl = $("#the_iframe").attr("src");
+          console.log(polyclinic.scrapingUrl);
+        }
+        callback();
+      });
+    }
+    else if(polyclinic.group == "NHG"){
+      var $;
+      request(polyclinic.link, function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+          $ = cheerio.load(body);
+          polyclinic.scrapingUrl = $(".content3 .contentBlock > iframe").attr("src");
+          console.log(polyclinic.scrapingUrl);
+        }
+        callback();
+      });
+    }
+  }, function(err) {
+    res.json(polyclinics);
+  });
+
+
+'<div><div>Number of waiting patients: ' + poi.waitingNumber +'<div><div>Waiting Time: ' + (poi.waitingTime || 0) +' minutes</div><div>'
++<img src="'+poi.imgConsultation+'" alt="Consultation" width="160" height="120"></div>';
+
+db.runCommand( {"collMod" : "hydefeatures" , "usePowerOf2Sizes" : false } )
+db.runCommand( {"collMod" : "tweets" , "usePowerOf2Sizes" : false } )
+db.runCommand( {"collMod" : "instas" , "usePowerOf2Sizes" : false } )
+db.runCommand( {"collMod" : "layers" , "usePowerOf2Sizes" : false } )
+db.runCommand( {"collMod" : "tokens" , "usePowerOf2Sizes" : false } )
+db.runCommand( {"collMod" : "geolocations" , "usePowerOf2Sizes" : false } )

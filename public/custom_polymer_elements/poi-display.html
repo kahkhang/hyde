@@ -1,0 +1,271 @@
+<dom-module id="poi-display">
+  <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="/bower_components/iron-icons/maps-icons.html">
+  <link rel="import" href="/bower_components/iron-icons/device-icons.html">
+  <link rel="import" href="/bower_components/iron-icons/image-icons.html">
+  <style is="custom-style">
+    .poi {
+      margin-left: 58px;
+      min-height: 50px;
+    }
+    
+    .poi .poi-header a {
+      text-decoration: none;
+    }
+    
+    .poi .poi-header img.pic {
+      float: left;
+      margin-top: 3px;
+      margin-left: -58px;
+      width: 48px;
+      height: 48px;
+    }
+    
+    .poi .poi-header span.layer {
+      font-weight: bold;
+    }
+    
+    .poi .poi-header span.name {
+      font-weight: bold;
+    }
+    
+    .poi .poi-body a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .poi .poi-footer {
+      font-size: 0.8em;
+      font-weight: bold;
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .poi .poi-footer > div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    
+    .right {
+      width: 24px;
+    }
+    
+    .poi .poi-timestamp {
+      font-weight: bold;
+      color: #666666;
+    }
+    
+    .pic {
+      float: left;
+      margin-top: 3px;
+      margin-left: -58px;
+      width: 48px;
+      height: 48px;
+    }
+    
+    .pic iron-icon {
+      --iron-icon-width: 48px;
+      --iron-icon-height: 48px;
+    }
+  </style>
+
+  <template>
+    <div class="poi">
+      <div class="poi-header">
+        <div class="pic">
+          <iron-icon icon="{{poi.icon}}"></iron-icon>
+        </div>
+        <span class="name">{{poi.name}}</span>
+      </div>
+      <div class="poi-body" id="poi-body">{{poi.description}}</div>
+      <div class="poi-footer">
+        <div class="left">
+          <div>{{poi.address}}</div>
+          <div class="poi-timestamp">
+            <span>Last updated on </span><span>{{poi.updated_human}}</span>
+          </div>
+        </div>
+        <div class="right">
+          <paper-icon-button icon="open-in-new" id="poi-hyperlink" on-click="openLink"></paper-icon-button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <script>
+    function unquoteattr(s) {
+      s = ('' + s); /* Forces the conversion to string type. */
+      s = s
+        .replace(/\r\n/g, '\n') /* To do before the next replacement. */
+        .replace(/[\r\n]/, '\n')
+        .replace(/&#13;&#10;/g, '\n') /* These 3 replacements keep whitespaces. */
+        .replace(/&#1[03];/g, '\n')
+        .replace(/&#9;/g, '\t')
+        .replace(/&gt;/g, '>') /* The 4 other predefined entities required. */
+        .replace(/&lt;/g, '<')
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'");
+      /* This MUST be the last replacement. */
+      s = s.replace(/&amp;/g, '&');
+      return s;
+    }
+
+    //https://elements.polymer-project.org/elements/iron-icons?view=demo:demo/index.html?utm_source=gdev-yt&utm_medium=video&utm_term=&utm_content=polycasticon&?utm_campaign=100days
+    function getIcon(layername) {
+      switch (layername) {
+        case "HDB":
+          return "icons:home";
+        case "HDB_BRANCHES":
+
+        case "NPARKS_PARKS":
+        case "NATIONALPARKS":
+        case "NPARKS_COMMUNITY_GARDENS":
+        case "NPARKS_COMMUNITY GARDENS":
+        case "NPARKS_SKYRISE GREENERY":
+        case "SKYRISEGREENERY":
+        case "GREENBUILDING":
+        case "PCN_ACCESS_POINTS":
+        case "NParks_Heritage Trees":
+        case "NParks_Heritage Roads":
+        case "HERITAGETREES":
+          return "image:nature";
+
+        case "BFABUILDINGS":
+          
+        case "KINDERGARTENS":
+        case "CPE_PEI_PREMISES":
+        case "PRIVATE EDUCATION INSTITUTIONS":
+        case "CHILDCARE":
+        case "STUDENTCARE":
+        case "SILVERINFOCOMM":
+        case "CETCENTRES":
+        case "LIBRARIES":
+          return "icons:book";
+
+        case "EXERCISEFACILITIES":
+          return "maps:directions-run";
+        case "SSC_SPORTS_FACILITIES":
+          return "maps:directions-run";
+        case "PLAYSG":
+          return "maps:directions-run";
+        case "RELAXSG":
+          return "maps:directions-run";
+        case "DUS_SCHOOL_SPORTS_FACILITIES":
+          return "maps:directions-run";
+        case "HSGB_NAPFA":
+          return "maps:directions-run";
+        case "WIRELESS_HOTSPOTS":
+          return "device:network-wifi";
+        case "IP_SERVICEPROVIDERS": //IP Law, not wifi xD
+          return "icons:account-balance"
+        case "CAMERAS":
+          return "image:photo-camera";
+        case "ROAD":
+          return "maps:traffic";
+        case "POLYCLINICS":
+          return "maps:local-hospital"
+        default:
+          return "maps:place";
+      }
+    }
+
+    function getName(poi) {
+      if (poi.name) return poi.name;
+      switch (poi.LAYERNAME) {
+        case 'TRAFFICINCIDENTS':
+          switch (Number(poi.Type)) {
+            case 0:
+              return 'Traffic Accident';
+            case 1:
+              return 'Roadworks';
+            case 3:
+              return 'Vehicle Breakdown';
+            case 5:
+              return 'Obstacle';
+            case 8:
+              return 'Heavy Traffic';
+            default:
+              return 'Traffic Incident';
+          }
+        case 'ROAD':
+          return 'Road';
+        case 'CAMERAS':
+          return 'Traffic Camera';
+        default:
+          return poi.NAME || ' ';
+      }
+    }
+
+    function getDescription(poi) {
+      if (poi.description) return poi.description;
+      switch (poi.LAYERNAME) {
+        case 'TRAFFICINCIDENTS':
+          return poi.Message;
+        case 'CAMERAS':
+          return '<img src="http://www.onemap.sg/LTACameraImages/' + poi.IMAGEID + '" alt="Road" width="240" height="180">';
+        case 'ROAD':
+          return poi.SPEED + " km/h";
+        case 'POLYCLINICS':
+          return '<div>' +
+            ((poi.waitingNumber) ? ('<div>Number of waiting patients: ' +
+              poi.waitingNumber + '<div><div>Waiting Time: ' + (poi.waitingTime || 0) + ' minutes</div>') : ("Polyclinic is closed!")) + '<div>' + '<img src="' + poi.imgConsultation + '" alt="Consultation" width="160" height="120"></div>'
+        default:
+          return poi.DESCRIPTION || ' ';
+      }
+    }
+    Polymer({
+      ready: function() {
+        var element;
+        if (!this.poi.link) {
+          element = document.getElementById("poi-hyperlink");
+          element.parentElement.removeChild(element);
+        }
+        this.$['poi-body'].innerHTML = this.poi.description;
+      },
+      properties: {
+        poi: {
+          type: Object,
+          computed: "getPoi(poijson)"
+        },
+        poijson: {
+          type: String
+        },
+        coordsjson: {
+          type: String
+        },
+        coords: {
+          type: Object,
+          computed: "getCoords(coordsjson)"
+        },
+        img: {
+          type: String
+        },
+        token: {
+          type: String
+        },
+      },
+      getCoords: function(coordsjson) {
+        return JSON.parse(unquoteattr(coordsjson)).coordinates;
+      },
+      getPoi: function(propertyJSON) {
+        var poi = JSON.parse(unquoteattr(propertyJSON));
+        console.log(poi);
+        poi.LAYERNAME = poi.LAYERNAME || '';
+        poi.LAYERNAME = poi.LAYERNAME.toUpperCase();
+        poi.name = getName(poi);
+        if (poi.HYPERLINK != "" && poi.HYPERLINK != "NA" && typeof(poi.HYPERLINK) != 'undefined')
+          poi.link = poi.HYPERLINK;
+        poi.icon = getIcon(poi.LAYERNAME);
+        poi.description = getDescription(poi);
+        return poi;
+      },
+      openLink: function() {
+        var win = window.open(this.poi.link, '_blank');
+        win.focus();
+      }
+    });
+  </script>
+
+</dom-module>

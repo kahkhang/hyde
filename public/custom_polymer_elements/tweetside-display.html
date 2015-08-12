@@ -1,0 +1,87 @@
+<dom-module id="tweetside-display">
+    <style>
+      paper-material {
+        border-left: 5px solid white;
+        border-right: 5px solid white;
+        display: inline-block;
+        background: white;
+        box-sizing: border-box;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 2px;
+        font-size: 12px;
+        width: 273px;
+        color: black;
+      }
+      
+      .address {
+        color: black;
+      }
+
+    </style>
+    
+    <template>
+        <paper-material class="paper-material" elevation="1" id="tweet" on-mouseover="mouseover"  on-mouseout="mouseout" >
+          <tweet-display tweetjson="{{tweetjson}}"></tweet-display>
+        </paper-material>
+    </template>
+   
+  <script>
+    function unquoteattr(s) {
+        s = ('' + s); /* Forces the conversion to string type. */
+        s = s
+            .replace(/\r\n/g, '\n') /* To do before the next replacement. */ 
+            .replace(/[\r\n]/, '\n')
+            .replace(/&#13;&#10;/g, '\n') /* These 3 replacements keep whitespaces. */
+            .replace(/&#1[03];/g, '\n')
+            .replace(/&#9;/g, '\t')
+            .replace(/&gt;/g, '>') /* The 4 other predefined entities required. */
+            .replace(/&lt;/g, '<')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'")
+            ;
+         /* This MUST be the last replacement. */
+        s = s.replace(/&amp;/g, '&');
+        return s;
+    }
+    
+    Polymer({
+      is: "tweetside-display",
+      ready: function() {
+          this.$.tweet.style.borderLeftColor = this.tweet.color;
+          this.$.tweet.style.borderRightColor = this.tweet.color;
+      },
+      properties: {
+        tweet: {
+            type: Object,
+            computed: "getTweet(tweetjson)"
+        },
+        tweetjson: {
+            type: String
+        },
+        tweetid: {
+          type: String
+        }
+      },
+
+      getTweet : function(tweetjson) {
+          //console.log(tweetjson);
+          var tweet = JSON.parse(unquoteattr(tweetjson));
+          //console.log(tweet);
+          tweet.displayProperties = {};
+          tweet.displayProperties.screen_name_url = "http://twitter.com/" + tweet.user.screen_name;
+          tweet.displayProperties.tweet_link = "http://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str;
+          tweet.address = tweet.address || tweet.place.country;
+          tweet.colorCSS = "color: " + tweet.color + ";"
+          return tweet;
+      },
+      mouseover: function() {
+        tweetLayers[this.tweet.id].openPopup();
+      },
+      mouseout: function() {
+        tweetLayers[this.tweet.id].closePopup();
+      }
+    });
+  </script>
+  
+</dom-module>
