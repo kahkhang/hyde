@@ -8,3 +8,7 @@ Built with Google Polymer, Node.js, MongoDB and D3.js
 
 Currently hosted on Cloud9: 
 http://hackathon-kahkhang.c9.io/
+
+Hackathon@SG Open Category Finalist Submission: https://ideas.ecitizen.gov.sg/a/pages/hackathon-at-sg-2015
+
+Created by: Lynnette (@quarbby), Ji An (@jiannnnn), Raymond (@misterpoe), Kah Khang (@kahkhang)
