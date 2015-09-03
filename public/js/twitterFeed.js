@@ -8,7 +8,7 @@ var shownInstaLayers = {};
 var selectedPolys = {};
 var allPolys = [];
 var allPolyHash = {};
-var expireInterval = 1000 * 60 * 5;
+var expireInterval = 1000 * 60 * 10;
 var xTweetInstas = crossfilter();
 var expireDimensionTweetInstas = xTweetInstas.dimension(function(layer) {
 	if (layer.feature.properties.insta)
