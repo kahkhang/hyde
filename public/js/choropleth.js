@@ -74,7 +74,9 @@ function addChoropleth(main, callback) {
 	info.update = function(props) {
 		//console.log(props);
 		this._div.innerHTML = '<h4>Region </h4>' + (props ?
-			'<b>' + props.name + '</b><br />Members of Parliament: '  + props.member_parliament : 'Hover over a region');
+			'<b>' + props.name + '</b><br /><b>Incumbent Party: </b>' + props.party + '<br /><b>PAP: </b>'  + props.PAP + 
+			'<br /><b>' + props.opposition_name + ':</b> ' + props.opposition_members
+			: 'Hover over a region');
 	};
 
 	info.addTo(map);
@@ -153,7 +155,7 @@ function addChoropleth(main, callback) {
 		allPolys.push(feature);
 	}
 
-	getJSON('/data/2015ge_grc.geojson', function(data) {
+	getJSON('/data/2015ge_grc_opposition.geojson', function(data) {
 		geojson = L.geoJson(data, {
 			style: style,
 			onEachFeature: onEachFeature
