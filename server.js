@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 var server = require('http').Server(app);
-var port = process.env.PORT || 3000;
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
 
 // Connect to mongodb
 var connect = function () {
