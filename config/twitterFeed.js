@@ -186,7 +186,7 @@ function getkeywords(text) {
 }
 
 
-module.exports = function (server, passport, app, serverUrl) {
+module.exports = function (server, app, serverUrl) {
     var io      = require('socket.io').listen(server);
     //Create web sockets connection.
     var users = [];

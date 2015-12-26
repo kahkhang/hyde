@@ -4,14 +4,14 @@
  */
 
 var mongoose = require('mongoose');
-var home = require('home');
-var hydeApi = require('hydeApi');
+var home = require('../app/controllers/home');
+var hydeApi = require('../app/controllers/hydeApi');
 
 /**
  * Expose
  */
 
-module.exports = function (app, passport) {
+module.exports = function (app) {
   app.get('/', home.index);
   app.get('/SMRT', home.SMRT);
   app.get('/test', home.test);
