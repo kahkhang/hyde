@@ -313,6 +313,7 @@ module.exports = function (server, app, serverUrl) {
     app.post('/instagramCallback', function(req, res){
         var data = req.body;
         console.log('callback! :)');
+        removeExpired();
         //console.log(data);
         data.forEach(function(obj){
             request("https://api.instagram.com/v1/geographies/"+obj.object_id+"/media/recent?client_id=2c295b2ac37749bf8d8f25df15b8c885", function (error, response, body) {
