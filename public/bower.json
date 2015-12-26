@@ -58,5 +58,10 @@
     "PgwSlideshow": "https://github.com/Pagawa/PgwSlideshow.git#~2.0.1",
     "bootstrap-tagsinput": "~0.5.0",
     "Leaflet.EasyButton": "~1.1.0"
+  },
+  "resolutions": {
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1.1",
+    "polymer": "^1.2.1"
   }
 }
