@@ -1,0 +1,120 @@
+<!doctype html>
+
+<head>
+
+  <title>Hyde</title>
+
+  <link rel="icon" type="image.png" href="/img/hydelogo1.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+
+  <link rel="stylesheet" type="text/css" href="bower_components/Leaflet.contextmenu/dist/leaflet.contextmenu.css">
+  <link rel="stylesheet" href="bower_components/Leaflet-MiniMap/dist/Control.MiniMap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/typeahead.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+  <script src="bower_components/leaflet/dist/leaflet.js"></script>
+  <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="css/leaflet-routing-machine.css" />
+  <script src="js/leaflet-routing-machine.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzZr6EP9bOB9YuBRS8sFDzFJiHCyOaCME">
+  </script>
+  <script src="bower_components/polyline/src/polyline.js"></script>
+  <script src="js/lrm-google.js"></script>
+  <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <link rel="stylesheet" href="bower_components/leaflet-draw/dist/leaflet.draw.css">
+  <script src="bower_components/leaflet-draw/dist/leaflet.draw.js"></script>
+  <script src="bower_components/Leaflet-MiniMap/dist/Control.MiniMap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
+  <script src="bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+  <script src="bower_components/leaflet.bouncemarker/bouncemarker.js"></script>
+  <script src="bower_components/Leaflet.contextmenu/dist/leaflet.contextmenu.js"></script>
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+  <!--[if lt IE 9]>
+        <link rel="stylesheet" href="bower_components/leaflet.locatecontrol/dist/L.Control.Locate.ie.min.css"/>
+    <![endif]-->
+
+  <script src="bower_components/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+  <script src="bower_components/leaflet-realtime/dist/leaflet-realtime.min.js"></script>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="bower_components/geojson-js-utils/geojson-utils.js"></script>
+
+  <script src="js/twemoji.min.js"></script>
+
+
+  {% include 'polymer-imports.html' %}
+  {% include 'about-dialog.html' %}
+  {% include 'pushpin_sidebar.html' %}
+  {% include 'news_feed.html' %}
+
+  <script src="bower_components/typeahead.js/dist/typeahead.jquery.js"></script>
+  <script src="bower_components/typeahead.js/dist/bloodhound.js"></script>
+
+  <script src="js/leafletSearch.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
+  <script src="js/geojson-utils.js"></script>
+
+
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/d3-cloud/d3.layout.cloud.js"></script>
+  
+  
+  <script src="bower_components/crossfilter/crossfilter.min.js" charset="utf-8"></script>
+  <script src="bower_components/dcjs/dc.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="bower_components/dcjs/dc.css" />
+  
+  <link rel="stylesheet" href="css/colorbrewer.css" />
+  <script src="js/colorbrewer.js"></script>
+  
+  <script src="js/liquidfill.js"></script>
+  <script src="js/esri-leaflet.js"></script>
+  <script src="js/proj4.js"></script>
+  <script src="js/proj4leaflet.js"></script>
+  <script src="js/svy21.js"></script>
+  <script src="js/geojson.min.js"></script>
+  
+  <link rel="stylesheet" href="bower_components/PgwSlideshow/pgwslideshow.css" />
+  <script src="bower_components/PgwSlideshow/pgwslideshow.min.js"></script>
+  <link rel="stylesheet" href="bower_components/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
+  
+  <link rel="stylesheet" href="bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+  
+  <script type="text/javascript" src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  
+  <link rel="stylesheet" href="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" type="text/css" media="screen" />
+  
+  <script src="bower_components/Leaflet.EasyButton/src/easy-button.js"></script>
+  <link rel="stylesheet" href="bower_components/Leaflet.EasyButton/src/easy-button.css" type="text/css" media="screen" />
+  
+  <script src="js/visualizations.js"></script>
+  <script src="js/mainMap.js"></script>
+  <script src="js/twitterFeed.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/choropleth.js"></script>
+ 
+  <!--   <script src="http://www.onemap.sg/API/JS/?accessKEY=2WpSB38gVk5L3xgr73MgKn/LtDB7h5LGMc8G2DfSyv8DtrNiGNqyXnIGLyBid5q12G9S43MGYjVQd64oeIsSZKvLbci3d1TJtKB1riSGu8DVwgD3/EgjNw==|3Aq1GbPZzAY=&v=3.10&type=full"></script> -->
+
+  
+</head>
+
+<body>
+  <main-app></main-app>
+</body>

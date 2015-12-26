@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Leaflet</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	<script src="https://c5acbdfadff9c521bbc31aa6afee6eb97d0d7c03.googledrive.com/host/0B2ahwC3Xs15tMW4zcVVUdXZKRnM/script/layer/Marker.Text.js"></script>
+
+</head>
+<body>
+	<div style="width:100%; height:100%" id="map"></div>
+	<script type='text/javascript'>
+		//---------------------------------------------------------------------------
+		// MapSynq - GeoServer
+		var map = new L.Map('map', {center: new L.LatLng(1.26958, 103.90841), zoom: 10});
+		map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
+
+		//---------------------------------------------------------------------------
+		// MapSynq - GeoServer
+		var lyrWMSMapSynq = L.tileLayer.wms("http://t65a.mapsynq.com:8080/geoserver/gwc/service/wms", {
+			layers: 'Traffic_layer_onemap',
+			format: 'image/png',
+			transparent: true,
+			attribution: "MapSynq"
+		});
+		map.addLayer(lyrWMSMapSynq);
+
+		//---------------------------------------------------------------------------
+		// Markers
+		var marker = new L.Marker.Text(map.getCenter(), 'Vessel 123');
+		map.addLayer(new L.Marker(map.getCenter(), {opacity: 0.5}));
+		map.addLayer(marker);
+
+	</script>
+ 
+</body>
+</html>

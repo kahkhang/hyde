@@ -1,0 +1,1530 @@
+﻿<?xml version="1.0" ?>
+
+<configuration>
+	<userinterface>
+		<banner>visible</banner>
+		<title>Intelligent Map</title>
+		<subtitle></subtitle>
+		<logo>iMap/assets/images/logo.png</logo>
+		<stylesheet>iMap/themes/lighterside/style.swf</stylesheet>
+		<menus>
+			<menu id="menuMap" visible="true" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_globe.png" tiptool="Different representations of Singapore">Maps</menu>
+			<menu id="menuServices" visible="true" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_services.png" tiptool="Free map based services">Services</menu>
+			<menu id="menuWidgets" visible="true" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_tools.png" tiptool="Use these tools to explore/share the map">Tools</menu>List
+			<menu id="menuGallery" visible="true" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_Gallery.png" tiptool="Visit private sector entries in the Gallery">Gallery</menu>
+			<menu id="menuCategory" visible="false" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_category.png" tiptool="Location data contributed by partner agencies">Category 1</menu>
+			<menu id="menuInvisible" visible="false" icon="">Invisible</menu>
+		</menus>
+	</userinterface>
+	<map initialExtent="-3632.8 15170.7 65160.7 54765.2" fullExtent="-4423.6 15672.6 69773.4 52887.4">
+		<basemaps menu="menuMap">
+	   		<mapservice label="Street Map" type="basemaptile" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="Street map view" >http://e1.onemap.sg/ArcGIS/rest/services/Basemap/MapServer</mapservice>
+        		<mapservice label="Land Lot" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_landlot.png" tiptool="Land Lot map view" >http://e1.onemap.sg/arcgis/rest/services/LOT_VIEW/MapServer</mapservice>
+			<mapservice label="Electoral Division" type="elbtile" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="Electrol Boundary view" >http://e1.onemap.sg/ArcGIS/rest/services/ELD/MapServer</mapservice>
+			<mapservice label="URA Master Plan 2014" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Master Plan 2014"  token="" >http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_Land_Use_gaz/MapServer</mapservice>
+			<mapservice label="URA Parks and Waterbodies Plan" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Parks and Waterbodies Plan" token="" >http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_PW_gaz/MapServer</mapservice>
+			<mapservice label="URA Landed Housing Areas Plan" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Landed Housing Areas Plan"   >http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_LHA_gaz/MapServer</mapservice>
+			<mapservice label="URA Building Height Plan" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Building Height Plan"    >http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_BLDG_HT_gaz/MapServer</mapservice>
+			<mapservice label="URA Activity Generating Uses Plan" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Activity Generating Uses Plan"   >http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_AGU_gaz/MapServer</mapservice>
+			<mapservice label="URA Street Block Plans,Urban &#xA; Design Area, Conservation &#xA; Areas &amp; Monuments Plan" type="tiled" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Street Block Plans,Urban Design Area, Conservation Areas & Monuments Plan"> http://www.ura.gov.sg/ArcGis/rest/services/ppg/MP14_SBUD_gaz/MapServer</mapservice>
+			<mapservice label="URA Planning Boundaries"  type="dynamic" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="URA Planning Boundaries">http://www.ura.gov.sg/ArcGis/rest/services/ppg/Singapore_Planning_Boundaries/MapServer</mapservice>
+        	<mapservice label="MND Town Council Boundaries" type="mndtile" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="MND Town Council Boundaries">http://www.onemap.sg/ArcGIS/rest/services/MND_Towncouncil/MapServer</mapservice>
+<mapservice label="PA CDC Boundaries" type="pctile" visible="false" alpha="0" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_streetmap.png" tiptool="PACDC Boundaries">http://onemap.sg/ArcGIS/rest/services/PACDC/MapServer</mapservice>
+
+			</basemaps>
+	</map>
+	<navtools>
+		<navtool label="Zoom In" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomin.png" menu="menuNav">zoomin</navtool>
+		<navtool label="Zoom Out" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomout.png" menu="menuNav">zoomout</navtool>
+		<navtool label="Full Extent" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomfull.png" menu="menuNav">zoomfull</navtool>
+		<navtool label="Pan" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_pan.png" menu="menuNav">pan</navtool>
+		<navtool label="Previous Extent" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomprevious.png" menu="menuNav">zoomprevious</navtool>
+		<navtool label="Next Extent" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomnext.png" menu="menuNav">zoomnext</navtool>
+	</navtools>
+	<widgets>
+		<widget label="Hybrid Map" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_hybridmap.png" menu="menuMap" config="" tiptool="Toggle between maps">iMap/widgets/HybridMap.swf</widget>
+<widget label="Historical Maps" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_hybridmap.png" menu="menuMap" config="" tiptool="Singapore Maps since 1954">iMap/widgets/HistoricalMaps_Win.swf</widget>
+		<widget label="LandQuery" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_landquery.png" menu="menuServices" config="" tiptool="Query land ownership and Land lot ">iMap/widgets/LandQuery.swf</widget>
+		<widget label="SchoolQuery" icon="http://t1.onemap.sg/iMap/assets/images/icons/school2.png" menu="menuServices" config="" tiptool="Search for School and Building property">iMap/widgets/Schoolwidget.swf</widget>
+		<widget label="PropertyPrices" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_prop_icon.png" menu="menuServices" tiptool="Obtain the latest property transaction prices." config="">iMap/widgets/PropertyQuery.swf</widget>
+		<widget label="Space2Lease" icon="http://t1.onemap.sg/iMap/assets/images/icons/new_SLA1.png" menu="menuServices" tiptool="To find government property available for lease" config="">iMap/widgets/RentalQuery.swf</widget>
+		<widget label="BusRouteExplorer" icon="http://t1.onemap.sg/iMap/assets/images/icons/bus-icon.png" menu="menuServices" config="" tiptool="Search for bus explorer">iMap/widgets/BusExplorer.swf</widget>
+		<widget label="BizQuery" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_Acra_icon.png" menu="menuServices" tiptool="Query on Businesses" config="">iMap/widgets/BizQuery.swf</widget>
+		<widget label="BizQuery Data Search" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_search.png" menu="menuInvisible" tiptool="Search agency data with more options" config="">iMap/widgets/BizSearch.swf</widget>
+		<widget label="TrafficQuery" icon="http://t1.onemap.sg/iMap/assets/images/icons/trafficquery.png" menu="menuServices" tiptool="Check live traffic information" config="">iMap/widgets/LTAService.swf</widget>
+		<widget label="PopulationQuery" icon="iMap/assets/images/icons/i_StasticQuery.png" menu="menuServices" tiptool="View population data by planning areas and subzones" config="">iMap/widgets/PopulationQuery.swf</widget>
+    <widget label="RentalQuery" icon="iMap/assets/images/icons/RQ2013/hdb.png" menu="menuServices" tiptool="Obtain the latest rental transaction prices" config="">iMap/widgets/RQ.swf</widget>
+    
+	<widget label="SCDF Facility" icon="iMap/assets/images/icons/SCDF_HQ.jpg" menu="menuServices" tiptool="SCDF Facility" config="">iMap/widgets/SCDFWidget.swf</widget>
+	<widget label="Bird’s Eye View" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_birdview.png" menu="menuWidgets" tiptool="Overview map" config="">iMap/widgets/OverviewMapWidget.swf</widget>
+		<widget label="Bookmark" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_bookmark.png" menu="menuWidgets" tiptool="Store your location and share with others" config="">iMap/widgets/BookmarkWidget.swf</widget>
+		<widget label="Draw" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_draw.png" menu="menuWidgets" tiptool="Draw temporary graphics" config="">iMap/widgets/DrawWidget.swf</widget>
+		<widget label="Measure" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_measure.png" menu="menuWidgets" tiptool="Measure distance and area" config="">iMap/widgets/Measure.swf</widget>
+		<widget label="Magnify" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_zoomfull.png" menu="menuWidgets" tiptool="View map with the Magnifying glass" config="">iMap/widgets/magnifier.swf</widget>
+		<widget label="Map Link" icon="http://t1.onemap.sg/iMap/assets/images/icons/maplink.png" menu="menuWidgets" tiptool="Share the map" config="">iMap/widgets/MapLinkWidget.swf</widget>
+		<widget label="Print/Save" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_print.png" menu="menuWidgets" tiptool="Get your map copy" config="">iMap/widgets/PrintWidget.swf</widget>
+		<!--<widget label="Reset Map" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_clear.png" menu="menuWidgets" tiptool="Reload Map" config=""></widget>-->
+		
+		<widget label="Agency data Search" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_search.png" menu="menuInvisible" tiptool="Search agency data with more options" config="">iMap/widgets/SearchWidget.swf</widget>
+		<widget label="Add Themes" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_addtheme.png" menu="menuInvisible" config="" tiptool="Add agency layers on the map">iMap/widgets/AddThemes.swf</widget>
+		<widget label="Vicinity Search" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_searchnearby.png" menu="menuInvisible" tiptool="Search nearby facilities available to your location" config="">iMap/widgets/Proximity_Analysis.swf</widget>
+		<widget label="Get Address" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_addressbook.png" menu="menuInvisible" tiptool="Click on the building to get address of the building" config=""></widget> 
+		<widget label="Overlay KML" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_kml.png" menu="menuWidgets" tiptool="Overlay KML or Create new KML theme on the map,edit and save to your local directory." config="">iMap/widgets/LoadTemporaryThemeWidget.swf</widget>
+		<widget label="Map Plug-in" icon="http://t1.onemap.sg/iMap/assets/images/icons/feedback.png" menu="menuInvisible" tiptool="Map Plug-in" config=""></widget>
+		<widget label="Feedback" icon="http://t1.onemap.sg/iMap/assets/images/icons/feedback.png" menu="menuInvisible" tiptool="Feedback" config=""></widget>
+		<widget label="Directions" icon="http://t1.onemap.sg/iMap/assets/images/icons/direction.png" menu="menuInvisible" tiptool="Get directions to reach by Bus/MRT/Road" config="">iMap/widgets/Route.swf</widget>
+		<widget label="Enquiry Form" icon="http://t1.onemap.sg/iMap/assets/images/icons/enquiry.png" menu="menuInvisible" config="" tiptool="Enquiry Form">iMap/widgets/EnquiryFormWidget.swf</widget>
+		<widget label="Abbreviation" icon="http://t1.onemap.sg/iMap/assets/images/icons/abbreviation.png" menu="menuInvisible" tiptool="Abbreviations used in this website" config="">iMap/widgets/AbbreviationWidget.swf</widget>
+		<widget label="Legend" icon="http://t1.onemap.sg/iMap/assets/images/icons/legend.png" menu="menuInvisible" tiptool="Symbols used on the map" config="">iMap/widgets/LegendWidget.swf</widget>
+		<widget label="Send Map Link" icon="http://t1.onemap.sg/iMap/assets/images/icons/maplink.png" menu="menuInvisible" left="430" top="90" tiptool="Share the map with your friend." config="">iMap/widgets/SendMapLink.swf</widget>
+	</widgets>
+	<links>
+		<link label="Home" icon="http://t1.onemap.sg/iMap/assets/images/icons/i_home.png" menu="menuInvisible">http://test.theglobaledu.com</link>
+	</links>
+	
+	<OtherInfo>
+	<infoimgminwidth>0</infoimgminwidth>
+	<infoimgminheight>0</infoimgminheight>
+	<infoimgmaxwidth>400</infoimgmaxwidth>
+	<infoimgmaxheight>300</infoimgmaxheight>
+	
+<insetgeometry>53408.4763,34174.9139|57001.0257,34213.1325|56996.2483,31880.6030|57001.0257,29397.5877|53427.5856,29397.5877|53403.6990,31746.8378</insetgeometry>
+		<insettext>INSET|NOT TO SCALE</insettext>
+		<insettxtpostition>53475.3589,34194.0232|55328.9615,29397.5877</insettxtpostition>
+		<insettxtplacement>above|below</insettxtplacement>
+		
+<extent_CartesianCoords>0,15000,92000,56000</extent_CartesianCoords>
+		<extent_WGS84>103.58174061153612,1.1519178715457095,104.40843236710882,1.522641307944075</extent_WGS84>
+		<basemaptile>http://t1.onemap.sg/arcgiscache/Basemap/Layers/_alllayers</basemaptile>
+		<landlottile>http://e1.onemap.sg/arcgiscache/LOT_VIEW/Layers/_alllayers</landlottile>
+		<mndtile>http://e1.onemap.sg/MND_Towncouncil/Layers/_alllayers/</mndtile>
+<schoolserviceurl>http://www.onemap.sg/ArcGIS/rest/services/shool/MapServer</schoolserviceurl>
+		<customtilefullextent>-4589.0529981345,8065.64251572593,96370.1129604966,57234.9694430107</customtilefullextent>
+		<customtileinitialextent>11084.3934267008,36091.578619498,11668.421557257,36446.8922572086</customtileinitialextent>
+		<wkid>3414</wkid>
+		<tileimageformat>.jpg</tileimageformat>
+		<tileinfowidth>256</tileinfowidth>
+		<tileinfoheight>256</tileinfoheight>
+		<tileinfooriginX>-5878011.89743302</tileinfooriginX>
+		<tileinfooriginY>10172511.897433</tileinfooriginY>
+		<level>0,1,2,3,4,5,6,7,8</level>
+		<resolution>76.4372195411057,38.2186097705529,19.1093048852764,9.55465244263822,4.77732622131911,2.38866311065955,1.19433155532978,0.597165777664889,0.298450596901194</resolution>
+		<scale>288896,144448,72224,36112,18056,9028,4514,2257,1128</scale>
+		<schoolservice>http://www.onemap.sg/ArcGIS/rest/services/shool/Mapserver</schoolservice>
+		<GetBuilding>http://www.onemap.sg/SchoolDataAPI/Services.svc/getBuildings?token=</GetBuilding>
+<!-- cf89dd3afca84d1804babae76b59435e78682147f528589c666efa96b7a3ebc5d4325a28112cef95f9964758398a8f7e-->
+		<SearchSchool>http://www.onemap.sg/SchoolDataAPI/Services.svc/SearchSchools?token=</SearchSchool>
+		<GetSchool>http://www.onemap.sg/SchoolDataAPI/Services.svc/getSchools?token=</GetSchool>
+		<TrackingService>http://www.onemap.sg/API/services.svc/tr?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</TrackingService>
+		<SchoolPrint>http://www.onemap.sg/SchoolDataAPI/Services.svc/Schoolreport?token=</SchoolPrint>
+		<BuildingX>BLDG_X_ADDR</BuildingX>
+		<BuildingY>BLDG_Y_ADDR</BuildingY>
+		<SchoolX>SCHOOL_X_ADDR</SchoolX>
+		<SchoolY>SCHOOL_Y_ADDR</SchoolY>
+		<SchoolName>SCHOOLNAME</SchoolName>
+		<PostalCode>POSTAL_CODE</PostalCode>
+		<FileDownload>http://www.onemap.sg/customhandlers/downloadfile.ashx</FileDownload>
+    	<UploadedPath>http://www.onemap.sg/uploadedcsvkml/</UploadedPath>
+    	<UrlHandler>http://www.onemap.sg/customhandlers/urlhandler.ashx?u=</UrlHandler>
+    	<geometryservice>http://onemap.sg/ArcGIS/rest/services/Utilities/Geometry/GeometryServer</geometryservice>
+    	<MapExtent xmin="-4423.6" ymin="15672.6" xmax="69773.4" ymax="52887.4"></MapExtent >
+		<GisToken></GisToken> <!-- -->
+		<CopyRight>© 2015 OneMap</CopyRight>
+		<SpatialReference>3414</SpatialReference>
+		<DefaultZoomLevel>0</DefaultZoomLevel>
+		<ZoomLevel>7</ZoomLevel>
+		<MenuItemMaxCount>10</MenuItemMaxCount>
+		<ZoomDuration>800</ZoomDuration>
+		<TermsOfUseUrl>http://www.onemap.sg/home/TermsOfUse.html</TermsOfUseUrl>
+                <TermsOfLukcyDraw>TNC.htm</TermsOfLukcyDraw>
+		<HomePageUrl>http://www.onemap.sg/home/</HomePageUrl>
+		<HomePageUrlData>http://data.gov.sg/</HomePageUrlData>
+		<DataGovTooltp>Go to data.gov.sg. First-stop portal for government data.</DataGovTooltp>		
+<HelpPageUrl>http://www.onemap.sg/help/</HelpPageUrl>
+<FBPageUrl>http://www.facebook.com/onemap</FBPageUrl>
+<FBToolTip>Follow us on Facebook</FBToolTip>
+<FBLikeToolTip>Like on Facebook</FBLikeToolTip>
+<FBShareToolTip>Share on Facebook</FBShareToolTip>
+<FBLike>https://www.facebook.com/login.php?api_key=127760087237610&skip_api_login=1&display=popup&social_plugin=like&external_page_url=http%3A%2F%2Fwww.onemap.sg%2F&next=http%3A%2F%2Fwww.facebook.com%2Fconnect%2Fuiserver.php%3Fmethod%3Dopt.inlike%26app_id%3D127760087237610%26display%3Dpopup%26social_plugin%3Dlike%26secure%3Dfalse%26protocol%3Dhttp%253A%26external_page_url%3Dhtt p%253A%252F%252Fwww.onemap.sg%252F%26from_login%3D1&rcount=1</FBLike>
+<FBShare>http://on.fb.me/pfqx6z</FBShare>
+
+<AnnouncementToolTip>Announcements</AnnouncementToolTip>
+<HelpToolTip>Quick Links</HelpToolTip>
+		<RateOurSiteUrl>https://www.jusfeedback.asia/Community/se.ashx?s=7FDA9EA749F14922&Agency=MLAW.SLA&Svc=OneMap&eLnk=www.onemap.sg&Cat=Citizen</RateOurSiteUrl>
+		<SlaHomePage>http://www.onemap.sg/home</SlaHomePage>
+		<feedbacktooltip>Feedback</feedbacktooltip>
+		
+		<SMTileServers>
+			<TileServer TileServer="http://e1.onemap.sg/Basemap/Layers/_alllayers" />
+		</SMTileServers>
+		<PCTileServers>
+			<TileServer TileServer="http://e1.onemap.sg/PACDC/Layers/_alllayers" />
+		</PCTileServers>
+		<ELBTileServers>
+			<TileServer TileServer="http://e1.onemap.sg/ELD/Layers/_alllayers" />
+		</ELBTileServers>
+
+		<MNDTileServers>
+			<TileServer TileServer="http://e1.onemap.sg/MND_Towncouncil/Layers/_alllayers/" />
+		</MNDTileServers>
+
+		<TileServers>
+		  	<TileServer label="Land Lot" TileServer="http://e1.onemap.sg/arcgis/rest/services/LOT_VIEW/MapServer" />
+		</TileServers>
+    <LTTileServers>
+      <TileServer TileServer="http://e1.onemap.sg/arcgis/rest/services/LOT_VIEW/MapServer" />
+    </LTTileServers>
+    
+		<RestServiceUrl>http://www.onemap.sg/API/services.svc/basicSearch?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&returnGeom=1&wc=</RestServiceUrl>
+		<GAServiceURL>http://www.onemap.sg/API/services.svc/ga?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&sv=</GAServiceURL>
+                <RestUpdateRank>http://t1.onemap.sg/Systemservices/Services.svc/ur?token=cf89dd3afca84d1804babae76b59435e78682147f528589c666efa96b7a3ebc5d4325a28112cef95f9964758398a8f7e&searchval=</RestUpdateRank>
+		<RestAdvancedServiceUrl AdvSearchResults="&returnGeom=1&otptFlds=CATEGORY" >http://www.onemap.sg/API/services.svc/themeSearch?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&</RestAdvancedServiceUrl>
+		<RestMashUpServiceUrl>http://www.onemap.sg/API/services.svc/mashupData?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&themeName=</RestMashUpServiceUrl>
+		<RestExportMapServiceUrl>http://www.onemap.sg/API/services.svc/mashupImage?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&themeName=</RestExportMapServiceUrl>
+		<CalloutURL>http://www.onemap.sg/API/services.svc/</CalloutURL>
+
+		<RestEventServiceUrl EVENT="EVENT" DESCRIPTION="DESCRIPTION" OWNER="OWNER" STARTDATE="STARTDATE" ENDDATE="ENDDATE" URLLINK="URLLINK" X="X" Y="Y" >http://www.onemap.sg/API/services.svc/getevents?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&extents=</RestEventServiceUrl>
+		<CustomCallOut >http://www.onemap.sg/API/services.svc/busstop/</CustomCallOut>
+		<RestLayerListService>http://www.onemap.sg/API/services.svc/layerinfo</RestLayerListService>
+		<MapPlugInUrl>http://www.onemap.sg/imapplugin/plugin.html?</MapPlugInUrl>
+		<AddThemesMashup MashupIconSize="20" NameField="NAME" DescriptionField="DESCRIPTION" Photourlfield="PHOTOURL" HyperLinkField="HYPERLINK" AddressTypeField="ADDRESSTYPE" AddressBlockHouseNumberField="ADDRESSBLOCKHOUSENUMBER" AddressStreetNameField="ADDRESSSTREETNAME" AddressFloorNumberField="ADDRESSFLOORNUMBER" AddressUnitNumberField="ADDRESSUNITNUMBER" AddressBuildingNameField="ADDRESSBUILDINGNAME" AddressPostalCodeField="ADDRESSPOSTALCODE" LandXAddressPoint="LANDXADDRESSPOINT" LandYAddressPoint="LANDYADDRESSPOINT" MapTip="MAPTIP" SymbolColor="SYMBOLCOLOR"/>
+		
+		<RestAnnouncementService>http://www.onemap.sg/Miscapi/Services.svc/ga?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</RestAnnouncementService>
+
+		<ConfigXmlParsingError id="Message : 1"> </ConfigXmlParsingError>
+		<WidgetLoadError id="Message : 3"></WidgetLoadError>
+		
+		<CategoryMenuToolTip>Click on icon to view theme details</CategoryMenuToolTip>
+		<CategoryMenuItemToolTip>Location data contributed by partner agencies</CategoryMenuItemToolTip>
+		
+		<ConfigSLA>http://www.onemap.sg/Config/SLAConfiguration.xml</ConfigSLA>
+		<ConfigLandQuery>http://www.onemap.sg/Config/LandQuery.xml</ConfigLandQuery>
+		<ConfigLayer>http://www.onemap.sg/Config/Layer.xml</ConfigLayer>
+		<TableCalloutURL>http://www.onemap.sg/API/services.svc/</TableCalloutURL>
+		<Token>?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</Token>
+		<MashUpLayer name="Bus_Stop" visibleLevel="6" featuretype="esriGeometryPoint" STOP_CODE="BUS_STOP_CODE" ROAD_DESC="ROAD_DESC" STOP_DESC="BUS_STOP_NAME"/>
+		
+		<FeatureEditorUrl>http://www.onemap.sg/Featureeditor/FeatureEditor.asmx?wsdl</FeatureEditorUrl>
+		<WebserviceUrl>http://www.onemap.sg/feedback/InsertData.asmx?wsdl</WebserviceUrl>
+		<LQOwnershipclass sea= "State" state= "State" ministry= "State" statutory= "Statutory Board" statutoryforeshore="Statutory Board (Foreshore)" privateland= "Private" privateforeshore="Private (Foreshore)" mixed="Mixed "/>
+		<Ownershipclassfld>OWNERSHIP_CLASS</Ownershipclassfld>
+		<Imaptable>OWNDET.</Imaptable>
+		<Managingenquirycategory>Singapore Land Authority</Managingenquirycategory>
+		<Tablelocode>LOCODE</Tablelocode>
+		<Tablelodescription>LOCODELONGDESCRIPTION</Tablelodescription>
+		<Tableloenquirycategory>ENQUIRYCATEGORY</Tableloenquirycategory>
+		<Tableloemailaddress>EMAILADDRESSES</Tableloemailaddress>
+		<Tablelotelephoneno>TELEPHONENO</Tablelotelephoneno>
+		<Tablemacode>MACODE</Tablemacode>
+		<Tablemadescription>MACODELONGDESCRIPTION</Tablemadescription>
+		<Tablemaenquirycategory>ENQUIRYCATEGORY</Tablemaenquirycategory>
+		<Tablemaemailaddress>EMAILADDRESS</Tablemaemailaddress>
+		<Tablematelephoneno>TELEPHONENO</Tablematelephoneno>
+		<Lotkey>LOT_KEY</Lotkey> 
+  		<Mkts>MKTS</Mkts> 
+  		<Mktsnumber>MKTS_NUMBER</Mktsnumber> 
+  		<Lotnumber>LOT_NUMBER</Lotnumber> 
+  		<Checkdigit>CHECK_DIGIT</Checkdigit>
+		<LQSystemService>http://onemap.sg/Systemservices/Services.svc/getLODetails?token=</LQSystemService>
+<!-- cf89dd3afca84d1804babae76b59435e78682147f528589c666efa96b7a3ebc5d4325a28112cef95f9964758398a8f7e -->
+		
+		<INLISLinkURL>http://www.inlis.gov.sg/Layout/Products_SearchResult.aspx</INLISLinkURL>
+		<ThemeSearchURL>http://www.onemap.sg/API/services.svc/themeSearch?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</ThemeSearchURL>
+		<AdvanvedRouting 
+			CrossDomainXML = "http://www.onemap.sg/CrossDomain.xml" 
+			ProxyURL = "http://www.onemap.sg/PP/proxy.ashx?" 
+			GetAddressSQL = "SELECT X_ADDR, Y_ADDR, TRADE_NAME, HOUSE_BLK_NO, ROAD_NAME, POSTAL_CD FROM POI_GD WHERE" 
+			GetPoint = "SELECT X_ADDR, Y_ADDR FROM POI_GD WHERE TRADE_NAME" 
+			GetRoute = "SELECT TRADE_NAME, X_ADDR, Y_ADDR FROM POI_GD WHERE TRADE_NAME LIKE" 
+			xFields = "X_ADDR" 
+			yFields = "Y_ADDR" > 
+		</AdvanvedRouting>
+				<Abbreviations>
+			<Help>
+                <Title>Abbreviations</Title>
+                <Description>
+                    <Step>- The listed are the abbreviations (shortened form of a word) used on the map</Step>
+                </Description>
+                <VideoHelpURL></VideoHelpURL>
+            </Help>
+		</Abbreviations>
+		
+		<Legend>
+			<DynamicLegendELD>© Government of Singapore</DynamicLegendELD>
+			<DynamicLegendURA>© Urban Redevelopment Authority</DynamicLegendURA>
+			<PACDC_LEGEND>http://onemap.sg/imap/assets/images/PACDC_Legend.jpg</PACDC_LEGEND>
+			<MND_LEGEND>http://onemap.sg/imap/assets/images/MND_2014_legend.jpg</MND_LEGEND>
+			<URALegend>
+				<URAMasterPlan2008>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_LU_Legend.jpg</URAMasterPlan2008>
+				<ParksAndWaterBodies>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_PW_Legend.jpg</ParksAndWaterBodies>
+				<LandedHousing>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_LHA_Legend.jpg</LandedHousing>
+				<BuildingHeight>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_BH_Legend_final_ai_convert.jpg</BuildingHeight>
+				<StreetBlock>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_SBUD_Legend_edited.jpg</StreetBlock>
+				<ActivityGreen>http://www.ura.gov.sg/maps/src/css/custom/img/MP14_AGU_Legend_edited.jpg</ActivityGreen>
+<PlanningBoundary>http://www.ura.gov.sg/ArcGIS/rest/services/common/Singapore_Planning_Boundaries/MapServer/legend</PlanningBoundary>
+				<ELD_LEGEND>http://www.onemap.sg/imap/assets/images/ELD_2011_Legend.jpg</ELD_LEGEND>
+			</URALegend>
+			<Help>
+                <Title>Legend</Title>
+                <Description>
+                    <Step>- The listed are the symbols and graphics used on the map</Step>
+                </Description>
+                <VideoHelpURL></VideoHelpURL>
+            </Help>
+		</Legend>
+		
+		<bookmarks >
+			<bookmark name="Esplanade">29755.7 29822.0 31279.7 30567.3</bookmark>
+			<bookmark name="Sentosa">24869.6 24389.5 30965.5 27370.6</bookmark>
+			<bookmark name="Zoo">22483.4 42631.1 24007.4 43376.4</bookmark>
+			<bookmark name="Airport">42741.9 36059.2 48837.7 39040.2</bookmark>
+			
+			<BookMarkCount id="Message : 12">25</BookMarkCount>
+			
+			 <Help>
+                <Title>Bookmarks</Title>
+                <Description>
+                	<Step>"I hate searching for the same location every time!"</Step>
+                    <Step>- Click on the Add bookmark option to add new bookmark.</Step>
+                    <Step>- Enter a bookmark name and click on the Add bookmark button.</Step>
+                    <Step>- Current map extent will be saved as bookmark and will be added in the bookmarks list.</Step>
+                    <Step>- Click on bookmark from the list, map will be zoomed to the bookmarked location.</Step>
+                    <Step>- Click on delete bookmark option to delete existing bookmark.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/VideoHelp/Bookmark/bookmark.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				
+			</Tooltip>
+			<Error id="Message : 13"></Error>
+		</bookmarks>
+		
+		<HybridMap>
+			<Help>
+                <Title>Hybrid Map</Title>
+                <Description>
+                	<Step>"I want to see both the maps at the same time."</Step>
+                    <Step>- Select map from a list to view it.</Step>
+                    <Step>- Drag the slider to adjust the transparency of both the maps.</Step>
+                </Description>
+                <VideoHelpURL></VideoHelpURL>
+            </Help>
+			<Tooltip>
+				<Slider>Set transparency</Slider>
+				<BaseMap>Set basemap</BaseMap>
+				<HybridMap>Choose basemap to hybrid</HybridMap>
+			</Tooltip>
+		<ELDMsg>Electoral boundaries may not coincide with boundaries of existing developments or forward looking maps like URA MasterPlan, Land Lot or Street Map.</ELDMsg>
+		</HybridMap>
+		
+		<LandQuery>
+			<About><![CDATA[<p style="text-align: justify">LandQuery is a free service provided by Singapore Land Authority (SLA) that offers first hand information on whether a plot of land is State Land, Statutory Board Land or Private Land. The first hand ownership information displayed is based on the State Lease issued. </p></br><p></br></p><p style="text-align: justify">For details on the registered ownership under the Land Titles Act, you will need to conduct searches on the public land-register maintained by SLA. To conduct searches, click <a href="http://www.inlis.gov.sg" target="_blank"><u>Here</u></a>. </p></br><p></br></p><p style="text-align: justify">For State Land, LandQuery also offers information on the contact agencies who may have first hand information relating to: </p></br><p></br></p><p style="text-align: justify">a) the use of the particular plot of land;</p></br><p></br></p><p style="text-align: justify">    and </p></br><p></br></p><p style="text-align: justify">b) the various agencies who are responsible for </p><p style="text-align: justify">    different aspects of the management or </p><p style="text-align: justify">    maintenance of the plot of land. </p></br><p></br></p><p style="text-align: justify">To continue using this service, you must accept the terms and conditions. </p>]]></About>
+		<Instruction>Click on the Query Ownership or Query Land lot button and click on map to make query.</Instruction>
+			<Help>
+				<Title>Land Query</Title>
+				<Description>
+				   <!-- <Step>"Who does this vacant land belong to?"</Step>
+					<Step>LandQuery is a free service that offers information on whether a plot of land is a state land, statutory board land or private land. Information on managing agent is also provided for state land.</Step>
+					<Step> </Step> -->
+					<Step>LandQuery is a free service provided by Singapore Land Authority (SLA) that offers first hand information on whether a plot of land is State Land, Statutory Board Land or Private Land.  For State Land, LandQuery also offers information on the contact agencies who may have first hand information relating to:</Step>
+					<Step><![CDATA[<p style="text-align: justify">a) the use of the particular plot of land;</p></br><p></br></p><p style="text-align: justify">    and </p></br><p></br></p><p style="text-align: justify">b) the various agencies who are responsible for </p></p><p style="text-align: justify">    different aspects of the management or </p><p style="text-align: justify">    maintenance of the plot of land. </p>]]></Step>
+					<Step> </Step>
+		
+		<Step>1.Click on Query Land Ownership Button and click on map.</Step>
+					<Step>2.Click on Query Land lot and click on map.</Step>
+					<Step>3.Enter lot number and click on Search button.</Step>
+					<Step> </Step>
+					<Step>Transactions within the last 14 days that might result in information change in the LandQuery may not have been captured by the systems.</Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/LQ/LQ.html</VideoHelpURL>
+			</Help>
+		</LandQuery>
+			
+		<EnquiryForm>
+			<WebserviceUrl>http://www.onemap.sg/feedback/InsertData.asmx?wsdl</WebserviceUrl>
+			<UpdateCategoryUrl>http://t1.onemap.sg/Systemservices/Services.svc/updateLQ?categoryname=</UpdateCategoryUrl>
+			<TableName>iMAP_LQ_STATS</TableName>
+			<TableFields>EnquiryCategory,EnquiryDate</TableFields>
+			<EmailSubject>land Enquiry</EmailSubject>
+			<BodyMessage>System generated message for feedback</BodyMessage>
+			<ToUserList>onemaphelpdesk@niit-tech.com.sg</ToUserList>
+			<CcUserList></CcUserList>
+			<ReturnMsg>Email Sent</ReturnMsg>
+			<UserId>General User</UserId>
+			<Instruction>Enter the inputs and click on submit button to submit the enquiry.</Instruction>
+			<Help>
+				<Title>Enquiry Form</Title>
+				<Description>
+					<Step>1.Enter the inputs.</Step>
+					<Step>2.Click on Submit button.</Step>
+					<Step>3.Click on Reset button to clear all.</Step>
+				</Description>
+				<VideoHelpURL></VideoHelpURL>
+			</Help>
+			<labels>
+				<Mapinfo>map selected to make a query</Mapinfo>
+				<HeadTitle>Enquiry Form</HeadTitle>
+				<Info>Please let us know your specific enquiry by filling up the form below</Info>
+				<MandatoryFields>fields are required</MandatoryFields>
+				<Salutation>Salutation :</Salutation>
+				<LastName>Name :</LastName>
+				<LastNameExample>(e.g. Tan, Abdul, Smith)</LastNameExample>
+				<GivenName>Given Name :</GivenName>
+				<GivenNameExample>(e.g. Mei Ling, Hafizah, Amy)</GivenNameExample>
+				<Address>Address :</Address>
+				<Email>Email :</Email>
+				<Contact>Contact Number :</Contact>
+				<ContactInfoType>Contact Type:</ContactInfoType>
+				<CompanyName>Company Name :</CompanyName>
+				<CompanyAddress>Company Address :</CompanyAddress>
+				<CompanyContact>Company Contact :</CompanyContact>
+				<EnquiryDescription>Please enter enquiry below (max. 1000 characters)</EnquiryDescription>
+				<CharactersRemaining>characters remaining</CharactersRemaining>
+				<Submit>Submit</Submit>
+				<Reset>Reset</Reset>
+				<Close>Close</Close>
+			</labels>
+			<Values>
+				<SalutationValue>Select</SalutationValue>
+				<SalutationValue>Mr</SalutationValue>
+				<SalutationValue>Ms</SalutationValue>
+				<SalutationValue>Mrs</SalutationValue>
+				<SalutationValue>Mdm</SalutationValue>
+				<SalutationValue>Dr</SalutationValue>
+				<ContactType>Select</ContactType>
+				<ContactType>Mobile</ContactType>
+				<ContactType>Home</ContactType>
+				<ContactType>Office</ContactType>
+				<ContactType>Pager</ContactType>
+				<ContactType>Fax</ContactType>
+			</Values>
+		</EnquiryForm>
+
+		<Magnify>
+			<Help>
+                <Title>Magnifier</Title>
+                <Description>
+                	<Step>"Same location, different view"</Step>
+                    <Step>- The magnifier window works like a magnifying glass: as you pass the window over the data, you see a magnified view of the location under the window.</Step>
+                    <Step>- Moving the window does not affect the current map display.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/Magnify/Magnify.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				
+			</Tooltip>
+			<MagnifyCadaRestriction>Transparency of Land Lot with URA maps is not available.</MagnifyCadaRestriction>
+		</Magnify>
+		
+		<MapLink>
+			<MailSubject>Your friend has sent you a map from OneMap</MailSubject>
+			<MailBodyMsg>Please click on the link below to view the map.</MailBodyMsg>
+			<Help>
+				<Title>Map Link</Title>
+				<Description>
+					<Step>"My friend, now you know where to meet and how to get there?"</Step>
+					<Step>1. Copy the maplink and share with others.</Step> 
+					<Step>2. Email.</Step>
+					
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/MapLink/MapLink.html</VideoHelpURL>
+			</Help>
+			<Tooltip>
+				
+			</Tooltip>
+		</MapLink>
+		
+		<OverlayKML>
+			<Help>
+				<Title>Overlay KML</Title>
+				<Description>
+					<Step>1.Click on browse button.</Step>
+					<Step>2.Select the kml file from your local directory.</Step>
+					<Step>3.You will be prompted a message "Please click on Overlay KML Button".</Step>
+					<Step>4.Click on Overlay button, features will be mashed up on the map.</Step>
+					<Step>5.Click on a feature to see the call out window.</Step> 
+					<Step> </Step>
+					<Step>Note: Supports Google earth kml format @version 2.2</Step>
+					<Step>File Size should be less than 2MB.</Step>
+				</Description>
+				<VideoHelpURL></VideoHelpURL>
+			</Help>
+			<Tooltip>
+				
+			</Tooltip>
+		</OverlayKML>
+		
+		<Draw>
+			<Help>
+                <Title>Draw Graphics</Title>
+                <Description>
+                    <Title>Draw Point</Title>
+                    <Step>"Let’s meet here..."</Step>
+                    <Step>You may use these tools to add marker, line, polygon and text on the map. You could print or share this with others later.</Step>
+                    <Step>- Click on draw point tools.Select color, size and style and click on the map to draw a point on the map.</Step>
+                    <Title>Draw Line</Title>
+                    <Step>- Click on draw line tools.Select color and size (thickness) and click on different location on the map to draw a line on the map.</Step>
+                    <Step>- Single click on the map to start drawing the line and double to end.</Step>
+                    <Title>Draw Polygon</Title>
+                    <Step>- Click on draw polygon tools.Select color and click on different location on the map to draw a polygon on the map.</Step>
+                    <Step>- Single click on the map to start drawing the polygon and double to end.</Step>
+                    <Title>Display Text</Title>
+                    <Step>- Click on the text tool, select color, size (font), enter text and click on the map.</Step>
+                    <Step>- Text will be displayed on the map.</Step>
+                    <Title>Clear last graphic</Title>
+                    <Step>- Click on the clear last graphic tool to clear the last drawn graphic from the map.</Step>
+                    <Title>Clear drawing</Title>
+                    <Step>- Click on the clear drawing tool to clear all the graphics drawn on the map.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/draw/Draw.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				<pointlabel>Click on map to draw a point</pointlabel>
+				<linelabel>Click on the map to draw a line, keep clicking to continue, double click to end.</linelabel>
+				<polygonlabel>Click on the map to draw a polygon, keep clicking to continue, double click to end.</polygonlabel>
+				<drawtextlabel>Click on the map to display the text below on the map.</drawtextlabel>
+				<undoLabel>Clear the last graphic</undoLabel>
+				<clearlabel>Clear Graphics</clearlabel>
+			</Tooltip>
+			
+			<DrawError1 id="Message : 14">Please enter your text to be display on the map.</DrawError1>
+		</Draw>
+		
+		<Measure>
+			<geometryservice>http://onemap.sg/ArcGIS/rest/services/Utilities/Geometry/GeometryServer</geometryservice>
+			<spatialref>3414</spatialref>
+			<distanceunits>
+				<distanceunit abbr="m" conversion="1">Metres</distanceunit>
+				<distanceunit abbr="km" conversion=".001">Kilometres</distanceunit>
+				<distanceunit abbr="ft" conversion="3.2808">Feet</distanceunit>
+				<distanceunit abbr="mi" conversion="0.000621">Miles</distanceunit>
+			</distanceunits>
+			<areaunits>
+				<areaunit abbr="sq m" conversion="1">Square Metres</areaunit>
+				<areaunit abbr="sq km" conversion="0.000001">Square Kilometres</areaunit>
+				<areaunit abbr="sq ft" conversion="10.763910417">Square Feet</areaunit>
+				<areaunit abbr="sq mi" conversion="0.0000003861021">Square Miles</areaunit>
+				<areaunit abbr="ac" conversion="0.00024710538147">Acres</areaunit>
+				<areaunit abbr="ha" conversion="0.0001">Hectares</areaunit>
+			</areaunits>
+			 <Help>
+                <Title>Measuring distance and areas</Title>
+                <Description>
+                	<Step>"So how far is it from my place?"</Step>
+                   	<Step>Measure distance:</Step>
+                    <Step>- Click on the measure distance tool, select distance unit and draw line on the map.</Step>
+                    <Step>- Total length in the selected unit will be displayed along with the length of the last drawn segment.</Step>
+                    <Step>Measure area:</Step>
+                    <Step>- Click on the measure area tool, select area unit, perimeter unit and draw polygon on the map.</Step>
+                    <Step>- Total area and perimeter for the drawn polygon in selected units will be displayed.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/Measure/Measure.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				<pointLabel>Get Northing and Easting</pointLabel>
+				<lineLabel>Measure Line</lineLabel>
+				<polygonLabel>Measure Area</polygonLabel>
+				<clearLabel>Clear Graphics</clearLabel>
+			</Tooltip>
+			<Disclaimer>The measurement result is indicative only. It should not be used as an accurate measurement for official purpose, eg the distance between school and building for Primary One Registration.</Disclaimer>
+		</Measure>
+		
+		<OverviewMap >
+			<ovMapservice type="dynamic" mode="tiled">http://t1.onemap.sg/arcgis/rest/services/Basemap/MapServer</ovMapservice>
+			<Tooltip>
+				<mapTip>Click an area on this map to move to that location</mapTip>
+				
+				<zoomprevlabel>Previous view</zoomprevlabel>
+				<zoomnextlabel>Next view</zoomnextlabel>
+				
+				<panRight>Move East</panRight>
+				<panLeft>Move West</panLeft>
+				<panUp>Move North</panUp>
+				<panDown>Move South </panDown>
+				<panLowerRight>Move South East</panLowerRight>
+				<panLowerLeft>Move South West</panLowerLeft>
+				<panUpperLeft>Move North West</panUpperLeft>
+				<panUpperRight>Move North East</panUpperRight>
+			</Tooltip>
+			<Help>
+                <Title>Bird's Eye View</Title>
+                <Description>
+                    <Step>"House hunting? Wanna revisit all the searched locations?"</Step>
+                    <Step>- A pointer in the overview map window represents center of the currently displayed area on the base map.</Step>
+                    <Step>- Click on the overview map or move the pointer to view that location on the base map. This is a fast way of navigating the map e.g. from East Singapore to West Singapore in just a click.</Step>
+                    <Step>- Click on the pan tools (arrows around the overview map) to pan the base map to desired direction.</Step>
+                    <Step>- Click on previous view or next view tools to revisit previously viewed locations. If you have searched 10 locations using "Find Location", you may revisit them using these tools.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/Birds/Birds.html</VideoHelpURL>
+            </Help>
+		</OverviewMap>
+		
+		<Print>
+			<title>OneMap</title>
+			<subtitle>GIS for singapore land authority</subtitle>
+			<mapurl>http://www.onemap.sg/uploadedfiles</mapurl>
+			<copyright>.                                                               © 2015 OneMap</copyright>
+			<Help>
+                <Title>Print/Save</Title>
+                <Description>
+                	<Step>"I want to keep it for later."</Step>
+                    <Step>- Enter title for the map to be printed.</Step>
+                    <Step>- Check agree the Terms of Use.</Step>
+                    <Step>- Print, Save and Share buttons will appear.</Step>
+                    <Step>- Click on Print or save button to Print or save the current displayed map.</Step>
+                    <Step>- Click on Share button to share the Maplink of the displayed map, Map link window will open with the maplink of the current map.</Step>
+                    
+                </Description>
+                <VideoHelpURL></VideoHelpURL>
+            </Help>
+			<Tooltip>
+			
+			</Tooltip>
+			<PrintAlert1 id="Message : 30" >Enter title for the map to be printed.</PrintAlert1>
+		</Print>
+		
+		<ProximityAnalysis 
+			FacilityLocatorSQLString = "SELECT X_ADDR, Y_ADDR, TRADE_NAME, HOUSE_BLK_NO, ROAD_NAME, POSTAL_CD FROM POI_GD WHERE" 
+			QueryTaskURL = "http://t1.onemap.sg/ArcGIS/rest/services/Basemap/MapServer/76" 
+			QueryTaskOutFields = "BUILDING_NAME,HOUSE_BLK_NO,ROAD_NAME,POSTAL_CODE" 
+			GeometryServiceUrl = "http://onemap.sg/ArcGIS/rest/services/Utilities/Geometry/GeometryServer" 
+			DisplayColumn = "BUILDING_NAME"
+			xFields = "X_ADDR" 
+			yFields = "Y_ADDR">
+			<Help>
+				<Title>Vicinity Search</Title>
+				<Description>
+					<Step> </Step>
+					<Step>Draw Point Buffer</Step>
+					<Step> </Step>
+					<Step> </Step>
+					<Step>Draw Polygon Buffer</Step>
+					<Step> </Step>
+					<Step> </Step>
+					<Step>Draw Network Buffer</Step>
+					<Step> </Step>
+					<Step> </Step>
+					<Step>Facility Locator</Step>
+					<Step> </Step>
+					<Step> </Step>
+					<Step>Clear graphics</Step>
+					<Step> </Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/gisiMapFlex/help/MeasureHelp.swf</VideoHelpURL>
+			</Help>
+			<Tooltip>
+				
+			</Tooltip>
+		<VicinityAlert1 id="Message : 28" >There is no graphic drawn for query.</VicinityAlert1>
+		<VicinityAlert2 id="Message : 29" >Polygon buffer - Area is too big. \n Area can't exceed 60000 square meters.</VicinityAlert2>
+		</ProximityAnalysis>
+		<GetBusStops>http://www.onemap.sg/PublicTransportationV2/service1.svc/routesolns?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</GetBusStops>
+    <BusService>http://www.onemap.sg/PublicTransportation/Service1.svc/tl?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</BusService>
+		<BusDisclaimer>Choose my own bus stops</BusDisclaimer>
+		<TransitLink>Powered by TransitLink</TransitLink>
+		<TransitLinkBeta>Beta</TransitLinkBeta>
+		<routeBusOption>fast</routeBusOption>
+
+
+		<Route 
+			RouteAPI = "http://www.onemap.sg/API/services.svc/route/solve?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&routeStops="
+			RouteTaskUrl = "http://www.onemap.sg/ArcGIS/rest/services/Routing/NAServer/Route"
+			RouteTaskErpUrl = "http://www.onemap.sg/ArcGIS/rest/services/Routing-ERP/NAServer/Route"
+			RouteSQLString = "SELECT X_ADDR, Y_ADDR FROM POI_GD WHERE TRADE_NAME"
+			GetRoute = "SELECT TRADE_NAME, X_ADDR, Y_ADDR FROM POI_GD WHERE TRADE_NAME LIKE" 
+			GetAddress = "SELECT X_ADDR, Y_ADDR, TRADE_NAME, HOUSE_BLK_NO, ROAD_NAME, POSTAL_CD FROM POI_GD WHERE" 
+			
+			OutputFields = "otptFlds"
+			DisplayColumn = "SEARCHVAL"	
+			xFields = "X" 
+			yFields = "Y" 
+			postalCodeField = "POSTALCODE" 
+			categoryFields = "category" >
+			
+			<AnimationTime>3000</AnimationTime>
+			<Buffer1>100m</Buffer1>
+			<Buffer2>300m</Buffer2>
+			<Buffer3>500m</Buffer3>
+			<Help>
+                <Title>Get Directions</Title>
+                <Description>
+                    <Step>"How do I get to this place?"</Step>
+                    <Step>- Enter From and To location.</Step>
+                    <Step>- Enter 3 characters for suggestions. Select a suggestion to show location on map.</Step>
+                    <Step>- Click on "Go" button to get the direction between From and To location.</Step>
+                    <Step>- A route with step by step directions will appear.</Step>
+                    <Step>- Click on any step to highlight the route segment on the map.</Step>
+                    <Step>- Click on "reverse route" to reverse the route directions.</Step>
+                    <Step>- Click on "entire route" link to get the entire route on the map.</Step>
+                    <Step>- Click on "Let's drive" to traverse through the route.</Step>
+                    <Step>- Click on "print route" to print the directions.</Step>
+                    <Step>- Click on "clear route" to clear the route from map and close the widget.</Step>
+                    
+                </Description>
+                <Step>Add more stops on the map</Step>
+                <Description>
+                    <Step> </Step>
+                    <Step>- Click up and down arrows to adjust the position of the stop.</Step>
+                    <Step>- Click "x" to remove the stop.</Step>
+                    <Step>- Click on the "Avoid ERP" to find a route without ERP gantry.</Step>
+                    <Step>- CClick "Get Directions" to start routing.</Step>
+                </Description>
+                <Step>Stops list</Step>
+                <Description>
+                    <Step> </Step>
+                    <Step>- Click on add stops option and click on the map to add more stops</Step>
+                    <Step>- Stops list will appear</Step>
+                    <Step>- Click on Get Direction button to get the directions between the added stops on the map</Step>
+                </Description>
+                <Step>Confirm stop</Step>
+                <Description>
+                    <Step> </Step>
+                    <Step>- In case the system cannot find or is not sure of the To/From location, it will prompt you to confirm the stop location.</Step>
+                    <Step>- Click on the correct location to confirm.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/routing/routing.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				<drawPointBuffer>Draw Point Buffer</drawPointBuffer>
+				<drawPolygonBuffer>Draw Polygon Buffer</drawPolygonBuffer>
+				<drawNetworkPolygon>Draw Network Buffer</drawNetworkPolygon>
+				<facilityLocator>Facility Locator</facilityLocator>
+				<clear>Clear Graphics</clear>
+			</Tooltip>
+			<RouteAlert1>From/To location is missing.</RouteAlert1>
+<RouteAlert2 id="Message : 7" >Oops! System is unable to find a route. Please try another location.</RouteAlert2>
+<RouteAlert3 id="Message : 8" >Oops! This stop exists. Do you want to add it again?</RouteAlert3>
+<RouteAlert4 id="Message : 9" >Sorry! You have reached the limit of 7 Stops.</RouteAlert4>
+<RouteAlert5 id="Message : 15" >Oops! You can not avoid ERP.</RouteAlert5>
+<RouteAlert6 id="Message : 31" >Sorry! You have reached the limit of 3 Barriers.</RouteAlert6>
+<RouteAlert7 id="Message : 32" >Sorry! Maximum two stops are allowed</RouteAlert7>
+<RouteAlert8 id="Message : 33" >Oops! The system is unable to generate a solution (up to 2 transfers) based on selected walking distance</RouteAlert8>
+<RouteAlert9 id="Message : 34">Oops! Unable to display route, Please refer to the step by step travel results</RouteAlert9>
+<RouteAlert10 id="Message : 35" >Sorry! Unable to find route. Please select FROM bus stop.</RouteAlert10>
+<RouteAlert11 id="Message : 36" >Sorry! Unable to find route. Please select TO bus stop.</RouteAlert11>
+
+		</Route>
+		
+		<Search 
+			SearchPostalCode = "SELECT TRADE_NAME, X_ADDR, Y_ADDR, Category FROM POI_GD WHERE POSTAL_CD"
+			SearchPopupSQLString = "SELECT TRADE_NAME, X_ADDR, Y_ADDR, Category FROM POI_GD WHERE TRADE_NAME LIKE" 
+			LocationPopupSQLString = "SELECT DISTINCT Location FROM POI_GD" 
+			SearchTagsSQLString = "SELECT TRADE_NAME, X_ADDR, Y_ADDR, Category FROM POI_GD WHERE SearchTags LIKE"
+			ExcludeBusLayer="SBST_Bus_Stops"
+			ExcludeTransportCategory="Transport"
+ExcludeSystemAgency="SYSTEM"
+			OutputFields = "otptFlds"
+			DisplayColumn = "SEARCHVAL"
+			xFields = "X"
+			yFields = "Y"
+			xFieldsWc = "XCOORD"
+			yFieldsWc = "YCOORD"
+			postalCodeField = "POSTALCODE"
+			categoryFields = "CATEGORY"
+			PageCount = "PageCount"
+			
+			SearchIcon = "http://t1.onemap.sg/iMap/assets/images/icons/i_search.png"
+			SearchTitle = "Advanced Search">
+			
+			<Help>
+                <Title>Find Location</Title>
+                <Description>
+                    <Step> "So where is it??"</Step>
+                    <Step>Enter search text to find :</Step>
+                    <Step>- Building name</Step>
+                    <Step>- Address</Step>
+                    <Step>- Postal code or </Step>
+                    <Step>- X,Y coordinates</Step>
+                    <Step>-	Enter 3 characters for suggestions.</Step>
+                    <Step>-	Select a suggestion to show location on map.</Step>
+                    <Step>-	Enter the desired search text and click on "Go" button, a popup window(widget) will open with search results starting with the searched text.</Step>
+                    <Step>-	Click on a search result to highlight it on map and double click to zoom in to the location on the map.</Step>
+                    <Step>-	Click on "More Results" link to display results containing the search text in the address.</Step>
+                </Description>
+               <Step> </Step>
+               <Step>Advance Search</Step>
+                <Description>
+                <Step>- It allows searching a specific search value in the data contributed by the participating agency.</Step>
+                <Step>- Select "All" to search the search text in all the data. To refine your search you may limit the search to a Category, Agency or Theme.</Step>
+                 </Description>
+                <Description>
+                    <Step>Find Location - Based on "Category"</Step>
+                    <Step>- Choose category option and select a category from list box.</Step>
+                    <Step>- Enter search text and click on Find button.</Step>
+                    <Step>- Search results will be displayed in the Search Results window.</Step>
+                    <Step>- Click on any of the search result to show the location on map.</Step>
+
+                    <Step>Find - Based on "Agency"</Step>
+                    <Step>- Choose agency option and select an agency from list box</Step>
+                    <Step>- Enter search text and click on Find button</Step>
+                    <Step>- Search results will be displayed in the Search Results window</Step>
+                    <Step>- Click on any of the search result to show the location on map</Step>
+
+                    <Step>Find - Based on "Theme"</Step>
+                    <Step>- Choose theme option and select a theme from list box</Step>
+                    <Step>- Enter search text and click on Find button</Step>
+                    <Step>- Search results will be displayed in the Search Results window</Step>
+                    <Step>- Click on any of the desired search result to get the particular result on the map</Step>
+                    <Step>- Click on any of the search result to show the location on map.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/search/search.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				
+			</Tooltip>
+			<SearchNote>Search data contributed by participating agencies.</SearchNote>
+			<SearchAlertFault id="Message : 4">Please check your network connection.</SearchAlertFault>
+			<SearchAlert1>Please enter a search location.</SearchAlert1>
+			<SearchAlert2>Sorry, no result found! Please select a value from the suggestion list or try a different search string.</SearchAlert2>
+			<SearchAlert3 id="Message : 5" >No Results Found</SearchAlert3>
+		</Search>
+		
+		<ThemesOnMap 
+		    MashupLimit="200"
+			URAConservationArea = "E40E0E"
+			MapServiceURL = "http://www.onemap.sg/ArcGIS/rest/services/TOC/MapServer" 
+			MetadataURL = "http://www.onemap.sg/API/services.svc/metasearch?lyrName="
+			DynamicLayerSQL = "SELECT TRADE_NAME FROM"
+			GetGraphicPointSQL = "SELECT TRADE_NAME, X_ADDR, Y_ADDR FROM" 
+			GetGraphicPolySQL = "SELECT XY_ADDR FROM"
+			SqlStringThemeList = "SELECT * FROM ThemesOnMap ORDER BY category" 
+			xFields = "X"
+			yFields = "Y"
+			xyField = "XY" 
+			FeatureCount = "FeatCount"
+			ExtentParam = "extents"
+			QueryTaskURL = "http://www.onemap.sg/ArcGIS/rest/services/TOC/MapServer"
+			ThemesLimit = "10" 
+			CountOnly = "&onlycount=1" 
+			LimitLayer="Bus Stops"
+			LayerDisplayCountLimit="20" LayerDisplayCountLimitMsgId="Message : 10"
+			IconUrl="http://www.onemap.sg/icons/"
+			DatagovUrl="http://data.gov.sg/Metadata/OneMapMetadata.aspx?t=SPATIAL&id=">
+<!-- http://data.gov.sg/DGSTheme/onemap.ashx?ThemeName= -->
+			
+			<Help>
+                <Title>Add Themes</Title>
+                <Description>
+                 	<Step> "Where are all the museums?"</Step>
+                 	<Step> A Theme is collection of locations of government related services/facilities contributed and maintained by a partner agency e.g Libraries by National Library Board (NLB), Museums by National Heritage Board (NHB) etc.</Step>
+                    <Step>- Select desired theme from the theme menu to display it on the map.</Step>
+                    <Step>- Theme will displayed on the map and will be added in the visible theme list.</Step>
+                    <Step>- Click on a displayed facility to see more information about it.</Step>
+                    <Step>- At Singapore map extent (Level 1), only 200 locations will be shown. You may zoom in to an area to view data for that area. Total number of locations in the theme and locations currently shown on the map are displayed next to the theme.</Step>
+                    <Step>- Click on the add theme option and select theme(s) from the list to display on the map.</Step>
+                    <Step>- Selected theme will be displayed on the map and will be added in the "visible themes" list.</Step>
+                    <Step>- Click on more info icon to see metadata and legend for the theme.</Step>
+                    <Step>- Click on show/hide theme icon to show/hide theme on/from the map.</Step>
+                </Description>
+                <VideoHelpURL>http://www.onemap.sg/videohelp/theme/theme.html</VideoHelpURL>
+            </Help>
+			<Tooltip>
+				
+			</Tooltip>
+			<CategoryParsingError id="Message : 2"> </CategoryParsingError>
+			<RestServiceError id="Message : 11"></RestServiceError>
+<lyrtransparency>Breeding Habitat (SouthEast),0.3|Dengue Cases (SouthEast),0.8</lyrtransparency>
+		</ThemesOnMap>
+			
+		<GetAddress 
+			RestGeoCodeService="http://www.onemap.sg/schooldataAPI/Services.svc/revgeocode?token="
+			QueryTaskUrl="http://www.onemap.sg/ArcGIS/rest/services/TOC/MapServer/8"
+			QueryTaskOutFields="HOUSE_BLK_NO,ROAD_NAME,POSTAL_CODE,BUILDING_NAME"
+			xFields = "X_ADDR"
+			yFields = "Y_ADDR" >
+			
+			<MapPointOutSideBuildingClick id="Message : 6">Please click on the building.</MapPointOutSideBuildingClick>	
+		</GetAddress>
+		
+		<SchoolWidget>
+			<NoSchool>No such school exists. Please try some other school.</NoSchool>
+			<SchoolServiceUrl>http://www.onemap.sg/SchoolDataAPI/Services.svc/SearchSchools?token=</SchoolServiceUrl>
+			<SchoolMapServiceUrl>http://www.onemap.sg/SchoolDataAPI/Handler.ashx?accesstoken=</SchoolMapServiceUrl>
+			<GetSchoolsRestUrl>http://www.onemap.sg/SchoolDataAPI/Services.svc/getSchools?token=</GetSchoolsRestUrl>
+			<Disclaimer><![CDATA[ <p style="text-align: justify">The SchoolQuery service contains information accurate as of June 2015 for registration of children for admission to Primary One in 2016. The information for registration of children for admission to Primary One in 2017 will be updated in June 2016. For FAQ on Primary One Registration please <a href="http://www.moe.gov.sg/education/admissions/primary-one-registration/faqs/" target="_blank"><u>click here</u></a>.</p>]]></Disclaimer>
+			<POSTAL_CODE>POSTAL_CODE</POSTAL_CODE>
+			<DIST_CODE>DIST_CODE</DIST_CODE>
+			<SCHOOLNAME>SCHOOLNAME</SCHOOLNAME>
+			<SCHOOL_X_ADDR>SCH_X_ADDR</SCHOOL_X_ADDR>
+			<SCHOOL_Y_ADDR>SCH_Y_ADDR</SCHOOL_Y_ADDR>
+			<SCH_HSE_BLK_NUM>SCH_HSE_BLK_NUM</SCH_HSE_BLK_NUM>
+			<SCH_POSTAL_CODE>SCH_POSTAL_CODE</SCH_POSTAL_CODE>
+			<SCH_ROAD_NAME>SCH_ROAD_NAME</SCH_ROAD_NAME>
+			<HYPERLINK>HYPERLINK</HYPERLINK>
+			<XY>XY</XY>
+			<rCode>RD_CODE</rCode>
+			<hBlkNum>HSE_BLK_NUM</hBlkNum>
+			<ROAD_NAME>ROAD_NAME</ROAD_NAME>
+			<BLDG_X_ADDR>BLDG_X_ADDR</BLDG_X_ADDR>
+			<BLDG_Y_ADDR>BLDG_Y_ADDR</BLDG_Y_ADDR>
+			<MoreInfo>MOREINFO</MoreInfo>
+			
+			<Help>
+				<Title>School Query</Title>
+				<Description>
+					<Step>SchoolQuery is a free service that allows users to search for schools or buildings up to 2km away. This information is useful for property valuation, enrolment for Pri 1 registration.</Step>
+					<Step> </Step>
+					<Step>"Search for schools near a building"</Step>
+					<Step> </Step>
+					<Step>1.Click on Find Schools near a building button.</Step>
+					<Step>2.Search for a building on the map and click it.</Step>
+					<Step>3.Click on Reset button to clear the results</Step>
+					<Step> </Step>
+					<Step> "Search for buildings near a school"</Step>
+					<Step> </Step>
+					<Step>1.Click on Find Buildings near a school button</Step>
+					<Step>2.Select School from the dropdown list</Step>
+					<Step>3.Click on Find button</Step>
+					<Step>4.Click on Reset button to clear the results</Step>
+					<Step></Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/schoolquery/schoolquery.html</VideoHelpURL>
+			</Help>
+		</SchoolWidget>
+		
+		<Feedback>
+			<WebserviceUrl>http://www.onemap.sg/Systemservices/Services.svc/ifb?token=cf89dd3afca84d1804babae76b59435e78682147f528589c666efa96b7a3ebc5d4325a28112cef95f9964758398a8f7e</WebserviceUrl>
+			<TableName>iMAP_FEEDBACK</TableName>
+			<TableFields>SALUTN_T, NAM_T, LAST_NAM_T, EMAIL_ADDR_T, CNTCT_NUM_T, FEEDBACK_TYP_T, FEEDBACK_DESC_T, STATUS_T, CRT_DT</TableFields>
+			<EmailSubject>Feedback</EmailSubject>
+		    <BodyMessage>System generated message for feedback</BodyMessage>
+		    <ToUserList>onemaphelpdesk@niit-tech.com.sg</ToUserList>
+		    <CcUserList></CcUserList>
+			<ReturnMsg>Feedback Sent</ReturnMsg>
+			<UserId>General User</UserId>
+			<labels>
+				<MandatoryFields>Required information</MandatoryFields>
+				<Salutation>Salutation :</Salutation>
+				<LastName>Last Name / Surname :</LastName>
+				<LastNameExample>(e.g. Tan, Abdul, Smith)</LastNameExample>
+				<GivenName>Given Name :</GivenName>
+				<GivenNameExample>(e.g. Mei Ling, Hafizah, Amy)</GivenNameExample>
+				<Email>Email :</Email>
+				<Contact>Contact Number :</Contact>
+				<ConfirmLocation>Confirm feedback location :</ConfirmLocation>
+				<SubjectMatters>Subject Matters :</SubjectMatters>
+				<FeedbackDescription>Please enter your comments below (max. 1000 characters)</FeedbackDescription>
+				<Submit>Submit</Submit>
+				<Reset>Reset</Reset>
+				<Close>Close</Close>
+<!--Added for LuckyDraw - Paul-->
+				<Name>Name(As in NRIC/Passport) :</Name>
+				<NRICPassportNo>NRIC/Passport No :</NRICPassportNo>
+				<MailingAddress>Mailing Address :</MailingAddress>
+				<ContactNo>Contact No. :</ContactNo>
+				<TermsOfLukcyDraw>TNC.htm</TermsOfLukcyDraw>
+				<!--End of LuckyDraw -->
+			</labels>
+			<Values>
+				<SalutationValue>Mr</SalutationValue>
+				<SalutationValue>Ms</SalutationValue>
+				<SalutationValue>Mrs</SalutationValue>
+				<SalutationValue>Mdm</SalutationValue>
+				
+				<SalutationValue>Dr</SalutationValue>
+				<SubjectMatter>General Enquiry</SubjectMatter>
+				<SubjectMatter>Feedback on basemap</SubjectMatter>
+				<SubjectMatter>Feedback on Govt Agency data (themes)</SubjectMatter>
+				<SubjectMatter>Feedback on Landquery</SubjectMatter>
+				<SubjectMatter>Feedback on technical matters</SubjectMatter>
+				<SubjectMatter>Request for Data</SubjectMatter>
+				<SubjectMatter>Request for information</SubjectMatter>
+				
+			</Values>
+			<Help>
+				<Title>Feedback</Title>
+				<Description>
+					<Step>1. Give your feedback on data and services provided by us and furnish details about you which will help us to serve you better</Step>
+					<Step>2. Your feedback should be within 1000 characters length</Step>
+					<Step>3. Please specify map location on which you want to give feedback, by selecting the confirm location check box</Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/feedback/feedback.html</VideoHelpURL>
+			</Help>
+		</Feedback>		
+		<LoadTemporaryTheme>
+			<OverlayInfo>Single theme Point/Line/Polygon can be created at a time.</OverlayInfo>
+	        <Instruction>Enter url or browse kml from your local directory.</Instruction>
+			<Help>
+				<Title>Overlay KML</Title>
+				<Description>
+					<Step>1.Choose 'Overlay Theme'.</Step>
+					<Step>2.Enter the URL and click on ‘Overlay' button.</Step>
+					<Step>3.Click on ‘Browse from your local directory’ button and select the file from your local directory adn click on 'Overlay' button.</Step> 
+					<Step>4.Choose 'Overlay Theme', widget will flip and shows a Select Geometry type drop down list.</Step> 
+					<Step>5.Select the Geometry type from the drop downlist.</Step> 
+					<Step>6.Click Add Feature Tool - Add new point(by clicking a point on the map), polyline(by drawing  a line and double click to end the line), polygon (by drawing  a polygon and double click to end the polygon).</Step>
+					<Step>7.Click Select Feature tool- select the feature by dragging a rectangle on the map.</Step>
+					<Step>8.Click Save tool - save dialog box will open where you can save the file to your desired location.</Step> 
+					<Step>9.Click Edit tool - and click on the feature,A rich text editor will be opened where user can edit and click ok.</Step>
+				    <Step>10.Click Clear Selection tool -to clear the selected features.</Step>
+					<Step>11.Click Move Feature tool -click on the feature , drag and drop the feature to new position and click 'Save Edits', save dialog box will open where you can save the file to your desired location.</Step>
+				    <Step>12.Click Delete Feature tool -to delete the selected features.</Step>
+				  <Step>Note:  KML will be saved in SVY21 coordiantes.</Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/overlaykml/OverlayKMLVideo.html</VideoHelpURL>
+			</Help>
+		</LoadTemporaryTheme>
+<PropertyQuery>
+<PQ_PostalDistrictAPI_Url>http://www.onemap.sg/PPAPI/Services.svc/getProps?token=</PQ_PostalDistrictAPI_Url>
+
+<PQ_WithinRadiusAPI_Url>http://www.onemap.sg/PPAPI/Services.svc/getPropsR?token=</PQ_WithinRadiusAPI_Url>
+
+<PropertyDetails>http://www.onemap.sg/PPAPI/Services.svc/propDetails?token=</PropertyDetails>
+
+<PostalDistricts>01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28</PostalDistricts>
+<GeometryServiceUrl>http://onemap.sg/ArcGIS/rest/services/Utilities/Geometry/GeometryServer</GeometryServiceUrl>
+<ListOfPostalDistricts>http://spring.ura.gov.sg/LAD/ore/property_market/misc/list_of_postal_districts.htm</ListOfPostalDistricts>
+<URANotesUrl>imap/misc/URA_Notes.html</URANotesUrl>
+<HDBNotesUrl>imap/misc/HDB_Notes.html</HDBNotesUrl>
+<GlossaryUrl>http://www.ura.gov.sg/uol/property-market/about/glossary/definition-of-data-terms.aspx</GlossaryUrl>
+<TermsConditionsHDB>http://www.hdb.gov.sg/fi10/fi10218p.nsf/FI10VStatPgLookup/BB33TResale%20Flat%20PricesTerms%20and%20Conditions?OpenDocument</TermsConditionsHDB>
+<TermsConditionsURA>http://www.ura.gov.sg/realEstateWeb/resources/misc/T&C.jsp</TermsConditionsURA>
+<Disclaimer><![CDATA[<p style="text-align: justify">The PropertyPrices service contains information provided by HDB and URA for both public housing and private property. To continue using this service, you must accept the terms and conditions stipulated by HDB and URA.</p>]]></Disclaimer>
+<About><![CDATA[<p style="text-align: justify">The service enables you to check past 2-year resale HDB transacted prices as well as URA private residential property with caveats lodged.</p></br><p></br></p><p style="text-align: justify">The objective is to assist potential property buyers in making informed decisions, taking into account the prevailing trends in the HDB resale market and URA private residential property transactions with caveat lodged.</p></br><p></br></p><p style="text-align: justify">HDB data is based on registered resale applications and is updated daily. URA data is updated twice a week on every Tuesday and Friday. </p> </br> <p> </br> </p> <p style="text-align: justify"><a href="http://www.hdb.gov.sg/fi10/fi10218p.nsf/FI10VStatPgLookup/BB33FResale%20Flat%20PricesFAQ?OpenDocument" target="_blank"><u>HDB FAQ</u></a> </p> </br><p style="text-align: justify"><a href="http://www.ura.gov.sg/uol/property-market/Retrieve-Property-Data/data-private-residential-properties/private-residential-prop-transactions-caveats-lodged/faqs.aspx" target="_blank"><u>URA FAQ</u></a></p> ]]></About>
+<PostalCode>PC</PostalCode>
+<X>X_ADDR</X>
+<Y>Y_ADDR</Y>
+<BuildingName>BN</BuildingName>
+<HSE_BLK_NO>H_B_N</HSE_BLK_NO>
+<RoadName>RN</RoadName>
+<Source>SRC</Source>
+<PropType>PTYP</PropType>
+<PN_Flag>FLG</PN_Flag>
+<FloorLevel>FL</FloorLevel>
+<BlockNumber>Block_Number_N</BlockNumber>
+<FloorArea>FA</FloorArea>
+<FloorAreaSqm>FA_SQM</FloorAreaSqm>
+<FloorAreaSqf>FLOORAREA_SQF</FloorAreaSqf>
+<Model>AT</Model>
+<LeaseType>TEN</LeaseType>
+<TenureCommencementDate>PROPCREDT</TenureCommencementDate>
+<Price>PRI</Price>
+<PropertyType>PTYP</PropertyType>
+<HdbModel>M</HdbModel>
+<TransactionPeriod>10/10</TransactionPeriod>
+<ListInstruction>This list contains the records you have added from the callout window of each icon.</ListInstruction>
+<PQZoomLevel>7</PQZoomLevel>
+<PQZoomLevelMsg>Can't zoom further for PropertyPrices service.</PQZoomLevelMsg>
+<ErrMessage>No result found.</ErrMessage>
+<SelectProperty>Please select at least 1 Property Type.</SelectProperty>
+<MaxPropertyLimit>Only 1000 records can be added.</MaxPropertyLimit>
+<MaxPriceValidation>Maximum price cannot be less than Minimum price.</MaxPriceValidation>
+<DateValidation>TO date cannot be less than FROM date.</DateValidation>
+<DateToolTip>HDB data is based on registered resale applications and is updated daily.</DateToolTip>      
+<PriceValidation>End price value should not be less than start price value.</PriceValidation>
+<ImageHDB>http://www.onemap.sg/icons/pq/i_1_HDB.gif</ImageHDB>
+<ImageURA>http://www.onemap.sg/icons/pq/i_1_URA.gif</ImageURA>
+<Copyright>2015</Copyright>
+<Help>
+<Title>PropertyPrices</Title>
+<Description>
+<Step>PropertyPrices is a free service that allows users to search for HDB or Private properties.</Step>
+<Step>After opening the widget, search for transacted properties by map or by area. </Step>
+<Step>Searching by map enables you to pan and zoom to a specific location using the map. You can also do a search to obtain a more precise location, such as postal code.</Step>
+<Step> </Step>
+<Step>The steps used to perform the search by map include: </Step>
+<Step>1.Selecting a radius of up to 2km from your current location (centre of the map).</Step>
+<Step>2.Choose the type of properties you are interested in, ie HDB 3 or 4 room flats, or Condominiums.</Step>
+<Step>3.Choose a date range. We provide up to a 2-year range.</Step>
+<Step>4.Type in a price range (optional).</Step>
+<Step>5.Click Search to display the icons of properties that fit your criteria.</Step>
+<Step>6.You may then click on an icon to view the information and add them to a list for future comparison.</Step>
+<Step> </Step>
+<Step>The steps used to perform the search by area include: </Step>
+<Step>1.Selecting a postal district (these postal districts were commonly used in Singapore in the 1980s), and are still commonly referred to. A list of the general areas is available for your viewing. </Step>
+<Step>2.Choose the type of properties you are interested in, ie HDB 3 or 4 room flats, or Condominiums.</Step>
+<Step>3.Choose a date range. We provide up to a 2-year range. </Step>
+<Step>4.Type in a price range (optional). </Step>
+<Step>5.Click Search to display the icons of properties that fit your criteria. </Step>
+<Step>6.You may then click on an icon to view the information and add them to a list for future comparison. </Step>
+<Step> </Step>
+<Step></Step>
+</Description>
+<VideoHelpURL>http://www.onemap.sg/videohelp/PP/PP.html</VideoHelpURL>
+</Help>
+</PropertyQuery>
+
+<RentalQuery>
+		    <RqApiUrl>http://www.onemap.sg/SI/Services.svc/mashupData?token=MiRcE6PaK01acsujvRtoF/NFdBfihsSCI+wv00Iai2Yyrq1W6LZ6oJwkci/OGn2a1wR9aZmgQtwjWF4v60IFxYlHX9C0539B|mv73ZvjFcSo=&themeName=HDB_RQ,SLA_RQ</RqApiUrl>
+			<RqApiUrlDetails1>http://www.onemap.sg/SI/Services.svc/</RqApiUrlDetails1>
+			<RqApiUrlDetails2>?token=MiRcE6PaK01acsujvRtoF/NFdBfihsSCI+wv00Iai2Yyrq1W6LZ6oJwkci/OGn2a1wR9aZmgQtwjWF4v60IFxYlHX9C0539B|mv73ZvjFcSo=</RqApiUrlDetails2>
+			<RqAreaApiUrl>http://www.onemap.sg/SI/Services.svc/areaDetails?token=MiRcE6PaK01acsujvRtoF/NFdBfihsSCI+wv00Iai2Yyrq1W6LZ6oJwkci/OGn2a1wR9aZmgQtwjWF4v60IFxYlHX9C0539B|mv73ZvjFcSo=&rn=1</RqAreaApiUrl>
+			<TNC>http://www.hdb.gov.sg/fi10/fi10218p.nsf/FI10VStatPgLookup/BB33TResale%20Flat%20PricesTerms%20and%20Conditions?OpenDocument</TNC>
+			<AREA>AREA</AREA>
+			<EXTENT>EXTENT</EXTENT>
+			<PropertyTypes>Office,Commercial,Factory,Warehouse,Whole Properties (Mixed-Use)</PropertyTypes>
+			<Disclaimer><![CDATA[<p style="text-align: justify">The Property Query service contains information provided by HDB and URA for both public housing and private property. To continue using this service, you must accept the terms and conditions stipulated by HDB and URA.</p>]]></Disclaimer>
+			<About><![CDATA[<p style="text-align: justify">This service allows users to gain access to information pertaining to government property for rental.</p></br><p></br></p><p style="text-align: justify">In ‘Space2Lease’, SMEs and anyone wanting to set up their own businesses can find out easily on a map-based interface which government properties are available for lease. Users no longer have to visit individual agency’s website as ‘Space2Lease’ is a one-stop portal to find out these information.</p></br><p></br></p><p style="text-align: justify"><a href="http://www.spio.sla.gov.sg/spio/home.jsp" target="_blank"><u>SLA FAQ</u></a></p></br><p style="text-align: justify"><a href="http://www.place2lease.com/#" target="_blank"><u>HDB FAQ</u></a></p> ]]></About>
+			<XY>XY</XY>
+			<ADDRESSPOSTALCODE>ADDRESSPOSTALCODE</ADDRESSPOSTALCODE>
+			<THEMENAME>THEMENAME</THEMENAME>			
+			<AREANAME>AREANAME</AREANAME>
+			
+			<PROPERTYRENTAL>PROPERTYRENTAL</PROPERTYRENTAL>
+			<PROPERTYFLOORAREA>PROPERTYFLOORAREA</PROPERTYFLOORAREA>
+			<PROPERTYTYPE>PROPERTYTYPE</PROPERTYTYPE>
+			<ADDRESSBLOCKHOUSENUMBER>ADDRESSBLOCKHOUSENUMBER</ADDRESSBLOCKHOUSENUMBER>
+			<ADDRESSSTREETNAME>ADDRESSSTREETNAME</ADDRESSSTREETNAME>
+			<ADDRESSFLOORNUMBER>ADDRESSFLOORNUMBER</ADDRESSFLOORNUMBER>
+			<ADDRESSUNITNUMBER>ADDRESSUNITNUMBER</ADDRESSUNITNUMBER>
+			<ADDRESSBUILDINGNAME>ADDRESSBUILDINGNAME</ADDRESSBUILDINGNAME>
+			<REMARKS>REMARKS</REMARKS>
+			<DESCRIPTION>DESCRIPTION</DESCRIPTION>
+			<HYPERLINK>HYPERLINK</HYPERLINK>
+			<FUID>FUID</FUID>
+			<NAME>NAME</NAME>
+			<PHOTOURL>PHOTOURL</PHOTOURL>
+			<ADDRESSTYPE>ADDRESSTYPE</ADDRESSTYPE>
+			<PROPERTYAVAILABILITY>PROPERTYAVAILABILITY</PROPERTYAVAILABILITY>
+			<PROPERTAVAILABILITYDATE>PROPERTAVAILABILITYDATE</PROPERTAVAILABILITYDATE>
+			<TRADE>TRADE</TRADE>
+			<PROPERTYSTATUS>PROPERTYSTATUS</PROPERTYSTATUS>
+			<REGIONNAME>RN</REGIONNAME>
+			<LOCATIONNAME>LN</LOCATIONNAME>
+			<ListInstruction>Double click on the icons to add all units or add individual units from the callout.</ListInstruction>
+			<Help>
+				<Title>Space2Lease</Title>
+				<Description>
+				    <Step>Space 2Lease is a free service that allows users to search for HDB or SLA properties that are vacant and available for lease. After opening the widget, you can choose one or more criteria for your searches. The criteria available for searches are ‘Property Type’, ‘Price Range’, ‘Property Size’ and ‘Area’.</Step>
+					<Step>1.Choose the type of properties that you are interested in, i.e. office or factory (an option to choose all property types is also available).</Step>
+					<Step>2.Type in the price range (optional).</Step>
+					<Step>3.Type in the property price (optional).</Step>
+					<Step>4.Click ‘Find’ to display the icons of properties that fit your criteria on the map.</Step>
+					<Step>5.Click on the icons on the map to view information and add them to shortlist for future comparison.</Step>
+					<Step>6.You can also print out the list of vacant properties that were shortlisted at the ‘Vacant Property List’ by clicking on the ‘Show Details’ button.</Step>
+				    <Step>7.You can also make use of the ‘Add Theme’ widget to view facilities in the surrounding area of the searched results.</Step>
+					<Step>8.Click ‘Clear’ to reset and start a new search.</Step>
+				</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/S2L/s2lvideo.html</VideoHelpURL>
+			</Help>
+</RentalQuery>
+
+<BusQuery>
+			<Disclaimer><![CDATA[<p style="text-align: justify">The BusRoute service contains information provided by TransitLink and the Land Transport Authority (LTA). To continue using this service, you must accept the terms and conditions stipulated by TransitLink and LTA.</p>]]></Disclaimer>
+			<TermsConditionsTransitLink>http://www.lta.gov.sg/content/ltaweb/en/terms-of-use.html</TermsConditionsTransitLink>
+			<TermsConditionsLTA>http://www.transitlink.com.sg/pdf/T&C.pdf</TermsConditionsLTA>
+			<linkCalculateFare>http://www.transitlink.com.sg/eservice/eguide/service_route.php?B1=Submit&service=</linkCalculateFare>
+			<linkGetChart>http://www.publictransport.sg/pdf/busstops/</linkGetChart>
+			<TransitLink>Powered by TransitLink</TransitLink>
+<!-- qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEE9DOuAzJs/Ip -->
+			<AVAILABLE>http://www.onemap.sg/BusServiceAPI/Service1.svc/getAvDir?token=</AVAILABLE>
+			<STOPNAME>http://www.onemap.sg/BusServiceAPI/Service1.svc/getStNam?token=</STOPNAME>
+			<BusserviceUrl>http://www.onemap.sg/BusServiceAPI/Service1.svc/getBR?token=</BusserviceUrl>
+			<BusRouteServiceUrl>http://www.onemap.sg/BusServiceAPI/Service1.svc/getBusSvcNos?token=</BusRouteServiceUrl>
+			<AlertDirection> The Direction B does not exist. </AlertDirection>
+			<BusChartDetails>http://www.onemap.sg/BusServiceAPI/Service1.svc/getBCDtls?token=</BusChartDetails>
+			<BusTimeDetails>http://www.onemap.sg/BusServiceAPI/Service1.svc/GetBusArrivalTimeV2?token=</BusTimeDetails>
+			<ShowAllRouteUrl>http://www.onemap.sg/BusServiceAPI/Service1.svc/showRoute?token=</ShowAllRouteUrl>
+			<OnRoadClickShowRoute>http://www.onemap.sg/BusServiceAPI/Service1.svc/routeOnRoad?token=</OnRoadClickShowRoute>
+				<labels>
+					<BusStop>Select Bus Stop:</BusStop>
+				</labels>
+				<Values>
+					<BusStopValue>Select Bus Stop:</BusStopValue>	
+				</Values>
+				<BusExplDGHeading>Double click to zoom segment in map</BusExplDGHeading>
+</BusQuery>	
+		<AcraQuery
+			DisplayColumn = "NM"
+			xFields = "X"
+			yFields = "Y"
+			regNum = "RNO"
+			status= "STD"
+			Address = "ADR"
+			IndustryCategory = "INDCD"
+			Category = "CTG"
+			PostalCode = "PC"
+			PageCount = "PageCount"
+			SearchIcon = "http://t1.onemap.sg/iMap/assets/images/icons/i_search.png"
+			SearchTitle = "BizQuery Search">
+			
+			<About><![CDATA[<p style="text-align: justify">The ACRA BizQuery service contains information provided by the Accounting and Corporate Regulatory Authority. This service enables you to determine the location of registered businesses in Singapore. ACRA data is updated every Wednesday.</p> </br></br></br>]]></About>
+			<IndustryCategoryUrl>http://www.onemap.sg/bizQuery/Service1.svc/getCategory?token=</IndustryCategoryUrl>
+			<ActivityCategoryUrl>http://www.onemap.sg/bizQuery/Service1.svc/industryActivity?token=</ActivityCategoryUrl>
+			<DisplayCategoryURL>http://www.onemap.sg/bizQuery/Service1.svc/disp?token=</DisplayCategoryURL>
+			<DisplayDetails>http://www.onemap.sg/bizQuery/Service1.svc/getdetail?token=</DisplayDetails>
+			<DisplayDetailsCount>http://www.onemap.sg/bizQuery/Service1.svc/getdetailcount?token=</DisplayDetailsCount>
+			<ListInstruction>This list contains the records you have added from the callout window of each icon.</ListInstruction>
+			<BizServiceURL>http://www.onemap.sg/bizQuery/Service1.svc/getbyname?token=</BizServiceURL>
+			<BizReportURL>http://www.onemap.sg/bizQuery/Service1.svc/getlist?token=</BizReportURL>
+			<InfoUrl>http://www.onemap.sg/AcraLink</InfoUrl>
+			<MaxLimit>Only 1000 records can be added.</MaxLimit>
+			<Name>NM</Name>
+			<RegistrationNo>RNO</RegistrationNo>
+			<DisplayStatus>ST</DisplayStatus>
+			<IndustryCode>INDCD</IndustryCode>
+			<AllCategory>CTG</AllCategory>
+			<Address>ADR</Address>
+			<PostalCode>PC</PostalCode>
+			<Link>STATUS_HYPERLINK</Link>
+			<BizSearchAlertFault id="Message : 4">Please check your network connection.</BizSearchAlertFault>
+			<BizSearchAlert1>Please enter the business name.</BizSearchAlert1>
+			<BizSearchAlert2>Please enter at least 3 characters.</BizSearchAlert2>
+			<BizSearchAlert3 id="Message : 5" >No Results Found</BizSearchAlert3>
+			<BizZoomLevel>7</BizZoomLevel>
+			<BizCopyRight>2015</BizCopyRight>
+		</AcraQuery>
+<HistoricalMaps>		<Disclaimer>Historical Maps is a gallery that contains published streetdirectory maps since 1954 for viewing and download. The information is provided by the Singapore Land Authority. To continue using this feature, you must accept the terms and conditions.</Disclaimer>
+		<TNCURL>http://www.onemap.sg/home/termsofuse.html</TNCURL>
+		</HistoricalMaps>
+<SCDFQuery>
+		<SCDFService>http://onemap.sg/SCDFAPI/SCDFserv.svc/GetData?token=</SCDFService> <!-- qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr -->
+		<BufferDistance>0.5km|1.0km|1.5km|2.0km|Show all</BufferDistance>
+		<SCDFCategory>CD Shelters|HQs and Training Schools|Fire Station|Fire Post</SCDFCategory>
+		<SCDFLayerID>HQs and Training Schools,iMap/assets/images/icons/SCDF_HQ.jpg|CD Shelters,iMap/assets/images/icons/CDShelters.png|Fire Station,iMap/assets/images/icons/FS.png|Fire Post,iMap/assets/images/icons/FP.png</SCDFLayerID>
+	</SCDFQuery>
+
+	<LTASERVICE>
+			<Disclaimer><![CDATA[<p style="text-align: justify">This service enables you to check the live traffic information provided by Land Transport Authority (LTA).The objective is to assist commuters to plan their journey, taking into account the live traffic scenarios on the road. To continue using this service, you must accept the terms and conditions stipulated by LTA.</p>]]></Disclaimer>
+			<LIVETRAFFIC>LTI</LIVETRAFFIC>
+			<INCIDENTS>II</INCIDENTS>
+			<LIVETRAFFICCAMERA>LTCI</LIVETRAFFICCAMERA>
+			<ERP>ERPI</ERP>
+			<PARKINGLOTS>PLAI</PARKINGLOTS>
+			<SERVICEURL>http://www.onemap.sg/TrafficQuery/Service1.svc/SERVICEINFO?</SERVICEURL>
+			<X>X_ADDR</X>
+			<Y>Y_ADDR</Y>
+			<LIVETRAFFICE_IMAGES>http://www.onemap.sg/LTACameraImages/</LIVETRAFFICE_IMAGES>
+			<TRAFFIC_DENSITY>http://www.onemap.sg/ArcGIS/rest/services/LTATrafficDensity/MapServer</TRAFFIC_DENSITY>
+			<LTA_SERVICE_ALERT>Traffic Speed can be accessible only from level 2-5</LTA_SERVICE_ALERT>
+			<Help>
+				<Title>TrafficQuery</Title>
+                        <Description>
+                        	<Step>Traffic Query is a free service that allows users to display the live traffic conditions. After opening the widget user has options to check Traffic Speed, Incidents/Alerts, Live Traffic Camera, ERP and Parking Lots Availability by check on/off the desired service.</Step>
+				<Step>1. Traffic Speed shows the traffic density on the roads with different color combinations. </Step>
+				<Step>2. Incidents/Alerts shows the various incidents occurred on the road like Accidents, Traffic Jam, Road Works, Vehicle Breakdown or Other Incidents. On clicking on the icon of incidents on the map, shows incident detail like type and description of the incident.</Step>
+				<Step>3. Live Traffic Camera shows the images of live traffic for the major roads, crossing or places.</Step>
+				<Step>4. Electronic Road Pricing (ERP) service shows the ERP gantries on the map and shows further details of ERP rates by clicking on the ERP Gantry icon on the map.</Step>
+				<Step>5. Parking Lots Availability shows the parking lots on the map with their availability.</Step>
+			</Description>
+				<VideoHelpURL>http://www.onemap.sg/videohelp/overlaykml/overlaykml.html</VideoHelpURL>
+			</Help>
+		</LTASERVICE>
+
+		<PopulationQuery>
+			<Disclaimer><![CDATA[<p style="text-align: justify"><br>The PopulationQuery contains information provided by  Department of Statistics (DOS). Please read the Terms and Conditions before proceeding to use the service.<br></p>]]></Disclaimer>
+			<linkDOS>http://www.singstat.gov.sg</linkDOS>
+			<tcDOS>imap/misc/Tnc_DOS.html</tcDOS>
+			<SubZoneAlert>Zoom to 4th level (using the zoom bar at top left) to see subzones name.</SubZoneAlert>
+			<LoadingAlert>D a t a   m a y   t a k e   a   w h i l e   to  l o a d...</LoadingAlert>
+			<QueryTooltip>Click on each planning area to view statistical chart.    "You will be allowed to see upto 5 planning areas on the chart at one time.If you click on the sixth planning area, the earliest selected planning area will be overwritten by the last one."</QueryTooltip>
+			<!--<GetCategory>http://119.73.244.163/DOSAPI1/Service1.svc/getcategory?token=abc</GetCategory>-->
+			<DQZoomLevel>0</DQZoomLevel>
+			<DQZoomLevelMsg>Zoom to 4th level (using the zoom bar at top left) to see subzones name.</DQZoomLevelMsg>
+			<GetChartOrder>http://onemap.sg/DOSAPI/Service1.svc/getChartOrder?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</GetChartOrder>
+			<GetCategory>http://www.onemap.sg/DOSAPI/Service1.svc/getCategory?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</GetCategory>
+			<GetPolygonRings>http://www.onemap.sg/DOSAPI/Service1.svc/GetPolygons?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&planArea=</GetPolygonRings>
+			<GetStatisticalData>http://www.onemap.sg/DOSAPI/Service1.svc/GetValuesForCategories?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&year=</GetStatisticalData>
+			<GetChartByArea>http://www.onemap.sg/DOSAPI/Service1.svc/GetStatsForPlanningArea?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr</GetChartByArea>
+			<GetAreaName>http://www.onemap.sg/DOSAPI/Service1.svc/GetPolyFromPt?token=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&querypoint=</GetAreaName>
+			<About><![CDATA[<p style="text-align: justify">The PopulationQuery is a free service which allows you to view Singapore’s population data by planning areas and sub-zones.  Please read the Terms and Conditions on the use of PopulationQuery</p>
+			<p style="text-align: justify"><a href="http://www.onemap.sg/imap/misc/Tnc_DOS.html" target="_blank"><u>Terms and Conditions</u></a></p> <p style="text-align: justify">For more information, please refer to the Census and Population Trend reports available via  the Singapore Department of Statistics' website <a href="http://www.singstat.gov.sg" target="_blank">(<u>http://www.singstat.gov.sg</u>)</a></p> ]]></About>
+						<About_Help><![CDATA[Notes:
+Figures  may not add up to the totals due to rounding.
+The  application allows you to search for geospatial data of a particular year by  selecting the "Single Year" tab from the selection panel.
+Compare  data in 2 different years by selecting the "Multiple Years" tab. Note that only common categories from both years  are available for selection.<br />
+<strong><u>Steps to use "Single Year"</u></strong>
+1. Select the year on the slide bar. The available years for  selection are highlighted in green.
+2. Select Category from the drop down list, e.g. "Age Group".
+3. Select one or more sub-categories, e.g. "0-4", "5-9" etc.
+4. Select "Male" and/or "Female" if these options are available.
+5. Select "Planning Areas" or "Subzones" if these options are available.
+6. Click on "View Map" button to display data. Use the zoom bar at the top left to zoom in  and out of the map.
+7. Labels for planning area and subzones and the data can be displayed  or hidden from view by checking or un-checking the "Show Area Name" and "Show  Number" check boxes respectively.
+8. To view the data in chart or table form, click on the "Query"  button and then click on the planning area or subzones on the map. You can select up to 5 planning areas or 5  subzones for comparison. If more than 5  are selected, the first selection will be automatically removed from the  chart/table.<strong>
+<strong><u>Steps to use "Multiple Years"</u></strong>
+1. Select 2 years on the slide bar by moving the pointers. For example, to compare the data between  year 2000 and 2010, move the left pointer to 2000 and the right pointer to 2010.  The available years for selection are highlighted in green.
+2. Select Category from the drop down list, e.g. "Age Group".
+3. Select one or more sub-categories, e.g. "0-4", "5-9" etc.
+4. Select "Male" and/or "Female" if the options are available.
+5. Select "Planning Areas" or "Subzones" if the options are available.
+6. Click on "View Map" button to display data. Use the zoom bar at the top left to zoom in  and out of the map.
+7. To view the changes in the figures over the two years on the  map, drag the year selection in the year slider bar, which is located below the  "Planning Areas" and "Subzones" options.
+8. Labels for planning area/subzones and data can be displayed or  hidden from view by checking or un-checking the "Show Area Name" and "Show  Number" check boxes respectively. 
+9. To view the data in chart or table form, click on the "Query"  button and then click on the planning area or subzones on the map. 
+<strong><u>Print/Export</u></strong>
+To  print the map containing the data and legend, click on the "Print" icon on the  bottom right corner of the selection panel.
+To  print the data in chart or table format, click on the "Print" link on the top right  corner of the chart/table window. The  table can be exported into a CSV file by clicking on the "Export" link.
+<strong><u>Clear Map</u></strong>
+All the selected categories and sub-categories  can be cleared by clicking on the "Clear Map" icon, which is located next to  the printer icon in the selection panel.
+<br/><strong><u>More Information about the Data</u></strong>
+More information about the data used in this application can be found in  the following publications, which can be downloaded from the Statistics  Singapore website at <a href="http://www.singstat.gov.sg">www.singstat.gov.sg</a>: <ul>
+<li>Population  Trends</li><li>Census of  Population 2010 Statistical Release 3: Geographic Distribution and Transport </li><li>Census of  Population 2000 Statistical Release 4 - Geographic Distribution and Travel</li></ul>
+<u><strong>Definition of Planning Boundaries - Region, Planning Area and Subzones </strong></u>
+To facilitate urban planning, the Urban redevelopment Authority (URA) divides Singapore into 5 regions, namely Central, West, North, North-East and East Regions. Each region has a population size of more than 500,000 people and provide a mix of residential, commercial, business and recreational areas. Each region will be served by a Regional Centre to complement the activities in the Central Business District.
+The Planning Regions are divided into smaller Planning Areas. There are a total of 55 Planning Areas in Singapore with each Planning Area having a population of about 150,000 and served by a town centre and several neighbourhood commercial/shopping centres. The number of Planning Areas within a Planning region ranges from 6 to 22 depending on the distribution of population within the region.
+Each Planning Area is further divided into smaller Subzones which are usually centre around a focal point such as neighbourhood centre or activity node. There can be more than 10 Subzones within a Planning Area
+The size of each planning area and it's Subzones varies depending on the land uses, proximity to the Central Area, existing physical separators like expressways, rivers, major open spaces and other demarcators. <br />See more at]]></About_Help>
+			<YearLabel><![CDATA[<p style="text-align: justify">D A T A  I S  A V A I L A B L E  F O R  <b>2000, 2010, 2011, 2012 and 2013</b> </p></br> ]]></YearLabel>
+			<Help>
+				<Title>PopulationQuery</Title>
+                        <Description>
+                        		<Step>To facilitate urban planning the urban redevelopment Authority(URA) divides Singapore in 5 regions, namely Central,West, North, NorthEast and East region. Each region has a  population size of more that 500,000 people and provide a mix of resendential, commercial, business and recritional areas. Each will be served by  a Regional center  to compelete the activities in the Central Business Disctrict.</Step>
+								<Step>1. Traffic Speed shows the traffic density on the roads with different color combinations. </Step>
+								<Step>2. Incidents/Alerts shows the various incidents occurred on the road like Accidents, Traffic Jam, Road Works, Vehicle Breakdown or Other Incidents. On clicking on the icon of incidents on the map, shows incident detail like type and description of the incident.</Step>
+						 		<Step>3. Live Traffic Camera shows the images of live traffic for the major roads, crossing or places.</Step>
+						 		<Step>4. Electronic Road Pricing (ERP) service shows the ERP gantries on the map and shows further details of ERP rates by clicking on the ERP Gantry icon on the map.</Step>
+						 		<Step>5. Parking Lots Availability shows the parking lots on the map with their availability.</Step>
+						 </Description>
+				<VideoHelpURL>http://www.onemap.sg/VideoHelp/PopQuery/PopQuery.html</VideoHelpURL>
+			</Help>
+			<VideoHelp>
+				<Title>PopulationQuery</Title>
+				<Description>
+					<Step>Single Year</Step>
+					<Step>Query the data for a particular year.</Step>
+					
+					<Step> </Step><Step> </Step>
+					
+					<Step>Multiple Years</Step>
+					<Step>Compare data from similar categories and sub-categories which are available from 2 or more different years.</Step>
+					<Step> </Step><Step> </Step>
+					
+					<Step>Steps to use "Single Year"</Step>
+					<Step> </Step>
+					<Step>1.Choose the desirable year on the slide bar. </Step>
+					<Step>2.Choose the Category inside the drop down list.</Step>
+					<Step>3.Choose the Sub-category after choosing category.</Step>
+					
+					<Step>4.Choose the "Male" or "Female" if the data is available.</Step>
+					<Step>5.Choose the "Planning Areas" or "Subzones" if the data is available. </Step>
+					<Step>6.Labels for planning area and statistics can be turned on or off by checking or un-checking the "Show Area Name" and "Show Number" check boxes respectively.</Step>
+					<Step>7.Click on "View Map" button.</Step>
+					<Step>8.To see the specific data chart of each sub-category, click on the "Query" button. Then, click on the planning area on the map.</Step>
+ 					<Step> </Step><Step> </Step>
+ 					<Step>Steps to use "Multiple Years"</Step>
+					<Step> </Step>
+					
+					<Step>1.Choose the desirable Category inside the drop down list.</Step>
+					<Step>2.Choose the Sub-category after choosing category.</Step>
+					<Step>3.Choose the "Male" or "Female" if the data is available. </Step>
+					<Step>4.Choose the "Planning Areas" or "Subzones" if the data is available. </Step>
+					<Step>5.Labels for planning area and statistics can be turned on or off by checking or un-checking the "Show Area Name" and "Show Number" check boxes respectively. </Step>
+					<Step>6.Click on "View Map" button. </Step>
+					<Step>7.To compare data from 2 years, move the slider from 1 year to another. For example; if the user want to compare the data between year 2000 and 2010, user has to move the pointer from 2000 to 2010 vice versa 2010 to 2000. </Step>
+					<Step>8.To see the comparison of specific data chart of each sub-category which user selected click on "Query" button. Then, click on the planning area on the map. </Step>
+					<Step> </Step><Step> </Step>
+					<Step>Print/Export</Step>
+					<Step> </Step>
+					
+					<Step>To print the whole map, legend and chart or table on the map, click on the"Print" icon on the bottom right corner.</Step>
+					<Step>To print only chart or table, click"Print" text on the top left corner of the chart or table or export the table into CSV file by clicking on the"Export" icon for further data analysis.</Step>
+					<Step> </Step><Step> </Step>
+					<Step>Clear Map</Step>
+					<Step></Step>
+					<Step>User can clear all map and sub-categories that user selected by clicking on the"Clear Map" icon.</Step>
+ 					<Step></Step>
+ 					<Step></Step>
+					<Step> </Step>
+					<Step>Definition of Planning Boundaries - Region, Planning Area and Subzones </Step>
+					<Step></Step>
+					<Step></Step>
+					<Step>To facilitate urban planning, the Urban redevelopment Authority (URA) divides Singapore into 5 regions, namely Central, West, North, North-East and East Regions. Each region has a population size of more than 500,000 people and provide a mix of residential, commercial, business and recreational areas. Each region will be served by a Regional Centre to complement the activities in the Central Business District.</Step>
+					<Step></Step>
+					<Step>The Planning Regions are divided into smaller Planning Areas. There are a total of 55 Planning Areas in Singapore with each Planning Area having a population of about 150,000 and served by a town centre and several neighbourhood commercial/shopping centres. The number of Planning Areas within a Planning region ranges from 6 to 22 depending on the distribution of population within the region. </Step>
+					<Step></Step>
+					<Step>Each Planning Area is further divided into smaller Subzones which are usually centre around a focal point such as neighbourhood centre or activity node. There can be more than 10 Subzones within a Planning Area</Step>
+					<Step></Step>
+					<Step>The size of each planning area and it's Subzones varies depending on the land uses, proximity to the Central Area, existing physical separators like expressways, rivers, major open spaces and other demarcators.</Step>
+					<Step></Step>
+					<Step> </Step>
+					<Step>See more at</Step>
+					
+				</Description>
+				<VideoHelpURL></VideoHelpURL>
+				<URAMAPS>http://www.ura.gov.sg/uramaps</URAMAPS>
+			</VideoHelp>
+		</PopulationQuery>
+
+    <RQ2013>
+      <GetPropLocByPD_Url>http://www.onemap.sg/RQAPI/Service1.svc/RetrievePropertiesByPD?token=</GetPropLocByPD_Url>
+      <GetPropLocByRadius_Url>http://www.onemap.sg/RQAPI/Service1.svc/RetrievePropertiesByPOI?token=</GetPropLocByRadius_Url>
+      <GetPropTrans_URL>http://www.onemap.sg/RQAPI/Service1.svc/RetrieveTransactionDetails?token=</GetPropTrans_URL>
+      <PostalDistricts>01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28</PostalDistricts>
+      <GeometryServiceUrl>http://onemap.sg/ArcGIS/rest/services/Utilities/Geometry/GeometryServer</GeometryServiceUrl>
+      <ListOfPostalDistricts>https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm</ListOfPostalDistricts>
+      <URANotesUrl>RQNotes/URA_Notes.html</URANotesUrl>
+      <HDBNotesUrl>RQNotes/HDB_Notes.html</HDBNotesUrl>
+      <GlossaryUrl>http://www.ura.gov.sg/eservices_docs/lad/pmi/Glossary.html</GlossaryUrl>
+      <TermsConditionsHDB>RQNotes/TC_HDB.html</TermsConditionsHDB>
+      <TermsConditionsURA>RQNotes/TC_URA.html</TermsConditionsURA>
+      <TermsConditionsIRAS>RQNotes/TnC_RQIRAS.htm</TermsConditionsIRAS>
+      <Disclaimer><![CDATA[<p style="text-align: justify">The RentalQuery service contains information provided by HDB, IRAS and URA for both public housing and private property. To continue using this service, you must accept the terms and conditions stipulated by HDB, IRAS and URA.</p>]]></Disclaimer>
+      <About><![CDATA[<p style="text-align: justify">The service enables you to check prevailing HDB sublet market rental as well as IRAS and URA private residential property rental information.</p></br><p></br></p><p style="text-align: justify">The objective is to assist home owners and tenants make informed decisions, taking into account the prevailing trends in the HDB sublet market rental and IRAS and URA private residential property rental information.</p></br><p></br></p><p style="text-align: justify">HDB data is based on declaration by the flat owners in the subletting application and is updated on the 2nd of each month. IRAS and URA data is updated monthly on the fourth Friday of every month. If the schedule update falls on a public holiday, it will be updated on the following working day. </p> </br> <p> </br> </p> <p style="text-align: justify"><a href="http://www.hdb.gov.sg/fi10/fi10218p.nsf/FI10VStatPgLookup/BR12FMarket%20Rental%20RatesFAQ?OpenDocument" target="_blank"><u>HDB FAQ</u></a> </p> </br><p style="text-align: justify"><a href="http://www.ura.gov.sg/eservices_docs/lad/pmi/PMIFaq.html" target="_blank"><u>URA FAQ</u></a></p> ]]></About> 
+      <PostalCode>PC</PostalCode>
+      <X>X_ADDR</X>
+      <Y>Y_ADDR</Y>
+      <Address>ADDRESS</Address>
+      <BuildingName>PROJNAME</BuildingName>
+      <HSE_BLK_NO>H_B_N</HSE_BLK_NO>
+      <RoadName>STRTNAME</RoadName>
+      <Source>SRC</Source>
+      <PropType>PROPTYPE</PropType>
+      <PN_Flag>PNFLAG</PN_Flag>
+      <FloorLevel>FL</FloorLevel>
+      <BlockNumber>Block_Number_N</BlockNumber>
+      <FloorArea>FA</FloorArea>
+      <FloorAreaSqm>FA_SQM</FloorAreaSqm>
+      <FloorAreaSqf>FLOORAREA_SQF</FloorAreaSqf>
+      <Model>AT</Model>
+      <LeaseType>TEN</LeaseType>
+      <TenureCommencementDate>OTPDT</TenureCommencementDate>
+      <Price>PRI</Price>
+      <PropertyType>PTYP</PropertyType>
+      <HdbModel>M</HdbModel>
+      <TransactionPeriod>10/10</TransactionPeriod>
+      <ListInstruction>This list contains the records you have added from the callout window of each icon.</ListInstruction>
+      <RQZoomLevel>7</RQZoomLevel>
+      <ZoomLevelMsg>Can't zoom further for RentalQuery service.</ZoomLevelMsg>
+      <ErrMessage>No result found.</ErrMessage>
+      <SelectProperty>Please select at least 1 Property Type.</SelectProperty>
+      <MaxPropertyLimit>Only 1000 records can be added.</MaxPropertyLimit>
+      <MaxPriceValidation>Maximum price cannot be less than Minimum price.</MaxPriceValidation>
+      <DateValidation>TO date cannot be less than FROM date.</DateValidation>
+      <DateToolTip>HDB data is based on declaration by the flat owners in the subletting application and is updated on the 2nd of each month.</DateToolTip>
+      <PriceValidation>End price value should not be less than start price value.</PriceValidation>
+      <ImageHDB>http://119.73.244.163/pq_test/iMap/assets/images/icons/i_1_HDB.png</ImageHDB>
+      <ImageURA>http://119.73.244.163/pq_test/iMap/assets/images/icons/i_1_URA.png</ImageURA>
+      <Copyright>2015</Copyright>
+      <Help>
+        <Title>RentalQuery Help</Title>
+        <Description>
+          <Step>Will be updated soon...</Step>
+        </Description>
+        <VideoHelpURL>http://119.73.244.163/RQ_HTML/uc.html</VideoHelpURL>
+      </Help>
+    </RQ2013>
+<GoogleAnalytic>
+			
+			<AddThemesGAPageName>www.onemap.sg</AddThemesGAPageName>
+			<AddThemesGAId>UA-111-222</AddThemesGAId>
+			
+			<BizQueryGAPageName>/BizQuer</BizQueryGAPageName>
+			<BizQueryGAId>UA-11279869-17</BizQueryGAId>
+			
+			<BizSearchGAPageName>www.onemap.sg</BizSearchGAPageName>
+			<BizSearchGAId>UA-111-222</BizSearchGAId>
+			
+			<BookmarkGAPageName>www.onemap.sg</BookmarkGAPageName>
+			<BookmarkGAId>UA-111-222</BookmarkGAId>
+			
+			<BusExplorerGAPageName>www.onemap.sg</BusExplorerGAPageName>
+			<BusExplorerGAId>UA-111-222</BusExplorerGAId>
+			
+			<DrawWidgetGAPageName>www.onemap.sg</DrawWidgetGAPageName>
+			<DrawWidgetGAId>UA-111-222</DrawWidgetGAId>
+			
+			
+			<feedbackGAPageName>www.onemap.sg</feedbackGAPageName>
+			<feedbackGAId>UA-111-222</feedbackGAId>
+			
+			<HybridMapGAPageName>www.onemap.sg</HybridMapGAPageName>
+			<HybridMapGAId>UA-111-222</HybridMapGAId>
+			
+			<LandQueryGAPageName>www.onemap.sg</LandQueryGAPageName>
+			<LandQueryGAId>UA-11279869-44</LandQueryGAId>
+			
+			<LoadTemporaryThemeWidgetGAId>UA-111-222</LoadTemporaryThemeWidgetGAId>
+			<LoadTemporaryThemeWidgetName>www.onemap.sg</LoadTemporaryThemeWidgetName>
+			
+			<LTAServiceGAId>UA-111-222</LTAServiceGAId>
+			<LTAServiceGAPageName>www.onemap.sg</LTAServiceGAPageName>
+			
+			<magnifierGAId>UA-111-222</magnifierGAId>
+			<magnifierGAPageName>www.onemap.sg</magnifierGAPageName>
+			
+			<MapLinkWidgetGAId>UA-111-222</MapLinkWidgetGAId>
+			<MapLinkWidgetGAPageName>www.onemap.sg</MapLinkWidgetGAPageName>
+			
+			<MeasureGAId>UA-111-222</MeasureGAId>
+			<MeasureGAPageName>www.onemap.sg</MeasureGAPageName>
+			
+			<OverviewMapWidgetGAPageName>www.onemap.sg</OverviewMapWidgetGAPageName>
+			<OverviewMapWidgetGAId>UA-111-222</OverviewMapWidgetGAId>
+			
+			<PopulationQueryGAPageName>www.onemap.sg</PopulationQueryGAPageName>
+			<PopulationQueryGAId>UA-111-222</PopulationQueryGAId>
+			
+			<PrintWidgetGAPageName>www.onemap.sg</PrintWidgetGAPageName>
+			<PrintWidgetGAId>UA-111-222</PrintWidgetGAId>
+			
+			<PropertyQueryGAPageName>www.onemap.sg</PropertyQueryGAPageName>
+			<PropertyQueryGAId>UA-111-222</PropertyQueryGAId>
+			
+			<Proximity_AnalysisGAPageName>www.onemap.sg</Proximity_AnalysisGAPageName>
+			<Proximity_AnalysisGAId>UA-111-222</Proximity_AnalysisGAId>
+			
+			<RentalQueryGAPageName>www.onemap.sg</RentalQueryGAPageName>
+			<RentalQueryGAId>UA-111-222</RentalQueryGAId>
+			
+			<RouteGAPageName>www.onemap.sg</RouteGAPageName>
+			<RouteGAId>UA-111-222</RouteGAId>
+			<RouteBusGAPageName>www.onemap.sg</RouteBusGAPageName>
+			<RouteBusGAId>UA-111-222</RouteBusGAId>
+			
+			<SchoolQueryGAPageName>www.onemap.sg</SchoolQueryGAPageName>
+			<SchoolQueryGAId>UA-111-222</SchoolQueryGAId>
+			<SchoolQueryFindSchoolsGAPageName>www.onemap.sg</SchoolQueryFindSchoolsGAPageName>
+			<SchoolQueryFindSchoolsGAId>UA-111-222</SchoolQueryFindSchoolsGAId>
+			<SchoolQueryFindBuildingsGAPageName>www.onemap.sg</SchoolQueryFindBuildingsGAPageName>
+			<SchoolQueryFindBuildingsGAId>UA-111-222</SchoolQueryFindBuildingsGAId>
+			
+			<SearchWidgetQueryGAPageName>www.onemap.sg</SearchWidgetQueryGAPageName>
+			<SearchWidgetGAId>UA-111-222</SearchWidgetGAId>
+			
+			<SendMapLinkGAPageName>www.onemap.sg</SendMapLinkGAPageName>
+			<SendMapLinkGAId>UA-111-222</SendMapLinkGAId>
+		</GoogleAnalytic>
+
+<GalleryMenu>
+<MenuItem Label="Directory Services" NavigateURL="http://www.yellowpages.com.sg" ToolTip="Directory Services"/>
+<MenuItem Label="Live Traffic Conditions" NavigateURL="http://www.qi.com.sg" ToolTip="Live Traffic Conditions"/>
+<MenuItem Label="Location-Based Commerce" NavigateURL="http://mysurround.sg" ToolTip="Location-Based Commerce" />
+<MenuItem Label="Location Intelligence" NavigateURL="http://analytics.shownearby.com" ToolTip="Location Intelligence" />
+<MenuItem Label="Real Estate Information" NavigateURL="http://www.housefly.com.sg/index.aspx" ToolTip="Real Estate Information" />
+</GalleryMenu>
+
+<GalleryMenuAPI>
+<ApiUrl>http://www.onemap.sg/MiscAPI/Services.svc/ggm?token=MiRcE6PaK01acsujvRtoF/NFdBfihsSCI+wv00Iai2Yyrq1W6LZ6oJwkci/OGn2a1wR9aZmgQtwjWF4v60IFxYlHX9C0539B|mv73ZvjFcSo=</ApiUrl>
+<DISPLAYNAME>DISPLAYNAME</DISPLAYNAME>
+<ICONURL>ICONURL</ICONURL>
+<WEBSITEURL>WEBSITEURL</WEBSITEURL>
+<TOOLTIP>TOOLTIP</TOOLTIP>
+</GalleryMenuAPI>
+
+<ServicesMenuAPI>
+<ApiUrl>http://www.onemap.sg/Miscapi/Services.svc/gsm?token=MiRcE6PaK01acsujvRtoF/NFdBfihsSCI+wv00Iai2Yyrq1W6LZ6oJwkci/OGn2a1wR9aZmgQtwjWF4v60IFxYlHX9C0539B|mv73ZvjFcSo=</ApiUrl>
+<DISPLAYNAME>DISPLAYNAME</DISPLAYNAME>
+<ICONURL>ICONURL</ICONURL>
+<WEBSITEURL>WEBSITEURL</WEBSITEURL>
+<TOOLTIP>TOOLTIP</TOOLTIP>
+</ServicesMenuAPI>
+
+		<Instructions>
+			<GetAddress start="Getting building address. Please wait........." end="Click on Share hyperlink on callout. Get maplink and email to friend" />
+			
+			<ApplicationLoad>Double click on the map to zoom-in. Ctrl + double click to zoom-out. Drag the map to pan.</ApplicationLoad>
+			<AbbreviationLoad>View the Abbreviations used on the street map.</AbbreviationLoad>
+			<AddThemesLoad>Add themes on the map. Show/hide themes by clicking the eye icon. Add themes contributed by partner agencies.</AddThemesLoad>
+			<AdvancedRoutingLoad>Choose Drive, Bus, Bus and MRT and get direction.</AdvancedRoutingLoad>
+			<BookMarkLoad>Click the bookmarked location to view 'location map'.</BookMarkLoad>
+			<DrawLoad>Draw point, line and polyline on the map. Choose color & size to select different color & size for the graphic.</DrawLoad>
+			<EnquiryFormLoad>Fill your enquiry form and click submit button.</EnquiryFormLoad>
+			<FeedbackLoad>Fill the feedback form and click on submit button. </FeedbackLoad>
+			<HybridMapLoad>Apply transparency to basemaps. View two basemaps with transparency</HybridMapLoad>
+			<LandQueryLoad>Click Query Land ownership or landlot click on map.</LandQueryLoad>
+			<LegendLoad>view the legends used in the street map.</LegendLoad>
+			<MagnifierLoad>Drag the magnifying glass over an area to view that area at a different scale. Use + or - to change level. Use slider to adjust the map scale.</MagnifierLoad>
+			<MapLink>Share the map.</MapLink>
+			<MeasureLoad>Measure distance/area using these tools.</MeasureLoad>
+			<OverviewMapLoad>Click on the overview map to zoom to a location. Click preview view and next view to revisit searched locations.</OverviewMapLoad>
+			<PrintLoad>Print / share / save the map.</PrintLoad>
+			<VicinitySearchLoad>Explore a searched location further using these tools.</VicinitySearchLoad>
+			<BasicRoutingLoad>Click on each step to highlight, double click to zoom in.Type 3 characters for auto suggestions. Click on the flag to add stops on the map.</BasicRoutingLoad>
+			<SearchLoad>Click to highlight the location.Type 3 characters for auto suggestions.</SearchLoad>
+			<SearchResults>Results are displayed, click on a row to highlight location.</SearchResults>
+		</Instructions>
+	</OtherInfo>
+
+	<proxytype>asp</proxytype> <!-- apache|jsp|asp|php -->
+</configuration>

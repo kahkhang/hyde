@@ -1,0 +1,76 @@
+<dom-module id="instagramside-display">
+    <style>
+      paper-material {
+        border-left: 5px solid white;
+        border-right: 5px solid white;
+        display: inline-block;
+        background: white;
+        box-sizing: border-box;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 2px;
+        font-size: 12px;
+        width: 273px;
+        color: black;
+      }
+      
+      .address {
+        color: black;
+      }
+    </style>
+    
+    <template>
+        <paper-material class="paper-material" elevation="1" id="instagram" on-mouseover="mouseover" on-mouseout="mouseout" >
+          <instagram-display instagramjson="{{instagramjson}}"></instagram-display>
+        </paper-material>
+    </template>
+   
+
+  <script>
+    function unquoteattr(s) {
+        s = ('' + s); /* Forces the conversion to string type. */
+        s = s
+            .replace(/\r\n/g, '\n') /* To do before the next replacement. */ 
+            .replace(/[\r\n]/, '\n')
+            .replace(/&#13;&#10;/g, '\n') /* These 3 replacements keep whitespaces. */
+            .replace(/&#1[03];/g, '\n')
+            .replace(/&#9;/g, '\t')
+            .replace(/&gt;/g, '>') /* The 4 other predefined entities required. */
+            .replace(/&lt;/g, '<')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'")
+            ;
+         /* This MUST be the last replacement. */
+        s = s.replace(/&amp;/g, '&');
+        return s;
+    }
+    
+    Polymer({
+      is: "instagramside-display",
+      ready: function() {
+          this.$.instagram.style.borderLeftColor = this.instagram.color;
+          this.$.instagram.style.borderRightColor = this.instagram.color;
+      },
+      properties: {
+        instagram: {
+            type: Object,
+            computed: "getInstagram(instagramjson)"
+        },
+        instagramjson: {
+            type: String
+        }
+      },
+      getInstagram : function(instagramjson){
+          var instagram = JSON.parse(unquoteattr(instagramjson));
+          return instagram;
+      },
+      mouseover: function() {
+        instaLayers[this.instagram.id].openPopup();
+      },
+      mouseout: function() {
+        instaLayers[this.instagram.id].closePopup();
+      }
+    });
+  </script>
+  
+</dom-module>

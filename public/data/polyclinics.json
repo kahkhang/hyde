@@ -1,0 +1,398 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Ang Mo Kio Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_ANG_MO_KIO_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.84718202313154,
+          1.3723121190241034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bedok Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_BEDOK_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.84718202313154,
+          1.3723121190241034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bukit Batok Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_BUKIT_BATOK_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.746922,
+          1.351504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Bukit Merah Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_BUKIT_MERAH_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.817883,
+          1.283319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Choa Chu Kang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_CHOA_CHU_KANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.750827,
+          1.382287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Clementi Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_CLEMENTI_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.765783,
+          1.312762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Geylang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_GEYLANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.887298,
+          1.319423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Hougang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_HOUGANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.888993,
+          1.370017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Jurong Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_JURONG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.730743,
+          1.34982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Marine Parade Polyclinic",
+        "name_en": "",
+        "source": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.907897,
+          1.302465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Outram Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_OUTRAM_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.838181,
+          1.279726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Pasir Ris Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_PASIR_RIS_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.959525,
+          1.368311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Queenstown Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_QUEENSTOWN_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.80106,
+          1.298346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Sengkang Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_SENGKANG_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894315,
+          1.392755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Tampines Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "SINGHEALTH_TAMPINES_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.946017,
+          1.357425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Toa Payoh Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_TOA_PAYOH_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.859049,
+          1.334632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Woodlands Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_WOODLANDS_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.775235,
+          1.430928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "168925514",
+        "lastchange": "",
+        "code": "2110",
+        "fclass": "clinic",
+        "name": "Yishun Polyclinic",
+        "name_en": "",
+        "source": "",
+        "images": [
+          "NATIONALHEALTHGROUP_YISHUN_3Consultancy.jpg"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837173,
+          1.423463
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+<dom-module id="instagram-display">
+    
+    <style>
+      .instagram {
+        margin-left: 58px;
+        min-height: 50px;
+      }
+      
+      .instagram .instagram-header a {
+        text-decoration: none;
+      }
+      
+      .instagram .instagram-header a img.user-pic {
+        float: left;
+        margin-top: 3px;
+        margin-left: -58px;
+        width: 48px;
+        height: 48px;
+      }
+      
+      .instagram .instagram-header a span.username {
+        font-weight: bold;
+      }
+      
+      .instagram .instagram-header a span.feels {
+        font-weight: bold;
+      }
+      
+      .instagram .instagram-body a {
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 2px;
+      }
+      
+      .instagram .instagram-footer {
+        font-size: 0.8em;
+        font-weight: bold;
+        display:table;
+        border-collapse:collapse;
+        width:100%;
+      }
+      
+      .instagram .instagram-footer > div {
+          display:table-cell;
+          vertical-align: middle;
+      }
+      
+      .instagram .instagram-timestamp {
+        font-weight: bold;
+        color: #666666;
+      }
+      
+      .right {
+        width: 24px;
+      }
+      
+      #instagramReply, #statusMsg {
+        display: none;
+      }
+      
+      .instagram-reply-msg {
+        font-size: 0.9em;
+        margin-left: 58px;
+        font-weight: bold;
+        color: #0D47A1;
+      }
+      
+      .mdl-textfield__input, .mdl-textfield__label{
+        font-size: 12px;
+      }
+
+      paper-textarea::shadow .mirror-text,
+      paper-textarea::shadow #textarea,
+      paper-textarea::shadow .input-content.style-scope.paper-input-container label.style-scope.paper-textarea {
+        width: 211px;
+        font-size: 12px;
+        line-height: 16.7999992370605px;
+
+      }
+    </style>
+    
+    <template>
+        <iron-ajax method="POST" url="/replyInstagram" id="instagramAjax" handle-as="json" on-response="replyResponse" 
+          debounce-duration="300"></iron-ajax>
+        <div class="instagram">
+          <div class="instagram-header">
+            <a href="{{instagram.link}}" target="_blank">
+              <img class="user-pic" src="{{instagram.images.thumbnail.url}}"/>
+              <span class="username">{{instagram.user.full_name}}</span> feels <span class="feels" style="{{instagram.colorCSS}}">{{instagram.feels}}</span>
+            </a>
+          </div>
+          <div class="instagram-body">
+            <a class="instagram-link" href="{{instagram.link}}" target="_blank" id="instagram-link"></a>
+          </div>
+          <div class="instagram-footer">
+            <div class="left" id="instaDetails">
+              <div>{{instagram.address}}</div>
+              <div class="instagram-timestamp">
+                <span>instagramed on </span><span>{{instagram.created_human}}</span>
+              </div>
+            </div>
+            <div class="right">
+                <paper-icon-button icon="reply" on-click="showReplyFields"></paper-icon-button>
+            </div>
+          </div>
+          
+          <div class="instagram-footer" id="instagramReply">
+            <div class="left">
+              <form action="#">
+                <paper-textarea label="Reply to instagram" no-label-float="true" size="1" id="replyText" char-counter rows="10" maxlength="140" id="replyText"></paper-textarea>
+                <!--
+                <div class="mdl-textfield mdl-js-textfield" style="width: 100%; padding: 0">
+                  <textarea class="mdl-textfield__input" type="text" rows= "3" id="replyText" maxlength="140"></textarea>
+                  <label class="mdl-textfield__label" for="replyText">Reply To instagram</label>
+                </div>
+                -->
+              </form>
+            </div>
+            <div class="right">
+              <paper-icon-button icon="send" on-click="sendStatus"></paper-icon-button>         
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="instagram-footer" id="statusMsg">
+          <span class="instagram-reply-msg">{{replymsg}}</span>
+        </div>
+
+    </template>
+   
+
+  <script>
+    function unquoteattr(s) {
+        s = ('' + s); /* Forces the conversion to string type. */
+        s = s
+            .replace(/\r\n/g, '\n') /* To do before the next replacement. */ 
+            .replace(/[\r\n]/, '\n')
+            .replace(/&#13;&#10;/g, '\n') /* These 3 replacements keep whitespaces. */
+            .replace(/&#1[03];/g, '\n')
+            .replace(/&#9;/g, '\t')
+            .replace(/&gt;/g, '>') /* The 4 other predefined entities required. */
+            .replace(/&lt;/g, '<')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'")
+            ;
+         /* This MUST be the last replacement. */
+        s = s.replace(/&amp;/g, '&');
+        return s;
+    }
+    
+    Polymer({
+      is: "instagram-display",
+      ready: function() {
+          this.$['instagram-link'].innerHTML = twemoji.parse(this.instagram.caption.text, {
+            attributes: 
+              function attributesCallback(icon, variant) {
+                return {
+                  width: '12px',
+                  height: '12px'
+                };
+              }
+          });
+
+            
+          
+      },
+      properties: {
+        instagram: {
+            type: Object,
+            computed: "getInstagram(instagramjson)"
+        },
+        instagramjson: {
+            type: String
+        }
+      },
+      getInstagram : function(instagramjson){
+          //console.log(instagramjson);
+          var instagram = JSON.parse(unquoteattr(instagramjson));
+          
+          //console.log(instagram);
+          //console.log(instagram.images.thumbnail.url);
+          /*
+          instagram.displayProperties = {};
+          instagram.displayProperties.screen_name_url = "http://twitter.com/" + instagram.user.screen_name;
+          instagram.displayProperties.instagram_link = "http://twitter.com/" + instagram.user.screen_name + "/status/" + instagram.id_str;
+          instagram.address = instagram.address || instagram.place.country;
+          instagram.colorCSS = "color: " + instagram.color + ";"*/
+          instagram.colorCSS = "color: " + instagram.color + ";";
+          return instagram;
+      },
+      showReplyFields : function() {
+        this.$.instagramReply.style.display = 'block';
+        document.querySelector('.mirror-text').style.width = $(this.$.instaDetails).width() + 'px';
+        //access that
+      },
+      sendStatus: function(){
+        /*
+        this.instagramReply = {};
+        
+        var status = this.$.replyText.value;
+        console.log(status);
+      	var id = 1407063558;
+      	*/
+      	//var id = instagramid;
+      	
+      	//console.log(this.instagram.id + " " + this.$.replyText.value);
+      	
+      	this.$.instagramAjax.params = {id: this.instagram.id, status: this.$.replyText.value };
+        
+        if (this.$.replyText.value == "") {
+          this.replymsg = "Error: Empty Reply!";
+        }
+        
+        else {
+          this.$.instagramAjax.generateRequest();
+          
+        }
+        
+      },
+      replyResponse: function(request) {
+        this.replymsg = "Reply instagramed!";
+        this.$.statusMsg.style.display = 'block';
+        console.log(request.detail.response);
+        console.log(this.$.ajax.lastResponse);
+      }
+    });
+  </script>
+  
+</dom-module>

@@ -1,0 +1,74 @@
+<paper-dialog id="pushpin" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+    <paper-drawer-panel left-drawer>
+      <div drawer>
+        <paper-header-panel mode="standard">
+        <div class="paper-header">
+          <p id="sidebar-header">Bishan Loft</p>
+          <p id="hyde-subheader">Bishan Street 11, S 579821</p>
+        </div>
+        
+        <div class="fit">
+          <section onclick="menuSelect()">
+            <paper-menu selected="0" role="menu" id="pushpin-menu">
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:traffic" item-icon></iron-icon>Traffic
+                </paper-icon-item>
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:local-library" item-icon></iron-icon>Schools
+                </paper-icon-item>                
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:local-pharmacy" item-icon></iron-icon>Health
+                </paper-icon-item>                
+              </paper-item>
+              
+              <paper-item>
+                <paper-icon-item>
+                  <iron-icon icon="maps:terrain" item-icon></iron-icon>Upcoming Constructions
+                </paper-icon-item>                
+              </paper-item>
+        
+            </paper-menu>
+          </section>
+        </div>
+        </paper-header-panel>
+      </div>
+      
+      <div main>
+        <iron-pages selected="0" id="pushpin-pages">
+          <div id="map-sidebar" style="height:100%"></div>
+          <div>Schools around the area</div>
+          <div>
+            <google-chart
+              type='column'
+              options='{"title": "Dengue Cases in the Area", 
+                  "vlabel": "Number of Cases",
+                  "hlabel": "Years",
+                  "label": "none"}'
+              data="cases.json">
+            </google-chart>
+            
+          </div>
+          <div>Upcoming Constructions. Get from BCA data</div>
+        </iron-pages>
+      </div>
+    </paper-drawer-panel>
+    
+</paper-dialog> 
+
+<script>
+
+  function menuSelect() {
+    var dialog = document.getElementById("pushpin");
+    var pages = document.querySelector("iron-pages");
+    var menu = document.getElementById("pushpin-menu");
+    pages.selected = menu.selected;
+  }
+
+</script>

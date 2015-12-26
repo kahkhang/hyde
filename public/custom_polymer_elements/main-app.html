@@ -1,0 +1,198 @@
+<dom-module id="main-app">
+    <template>
+        <paper-drawer-panel left-drawer id="paper-drawer-panel" drawer-width="300px">
+            <div drawer>
+                <paper-header-panel mode="standard">
+                    <div class="paper-header">
+                        <paper-tabs class="bottom self-end" selected="{{selected}}" noink>
+                            <paper-tab>Social Feed</paper-tab>
+                            <paper-tab>Data</paper-tab>
+                        </paper-tabs>
+                    </div>
+
+                    <div class="content fit">
+                        <iron-pages selected="{{selected}}">
+                            <div id="sidebars">
+                                <div id="mediaFeed"></div>
+                            </div>
+
+                            <div id="sidebars">
+                                <paper-header-panel id="graph-header" class="graphPanel">
+                                    <div class="paper-header" id="graph-header-header">Tag Cloud
+                                    </div>
+                                    <div class="content" id="graph-header-content">
+                                        <div id="tag-cloud" style="padding-top:10px"></div>
+                                    </div>
+                                </paper-header-panel>
+
+
+                                <paper-header-panel id="graph-header" class="graphPanel">
+                                    <div class="paper-header" id="graph-header-header">Twitter/Instagram Count</div>
+                                    <div class="content" id="graph-header-content">
+                                        <div class="graph" id="twit-graph"></div>
+                                    </div>
+                                </paper-header-panel>
+
+                                <paper-header-panel id="graph-header" class="graphPanel">
+                                    <div class="paper-header" id="graph-header-header">Sentiment Overview</div>
+                                    <div class="content" id="graph-header-content">
+                                        <div class="graph bar" id="sentiment-overview" style="margin-left: -15px"></div>
+                                    </div>
+                                </paper-header-panel>
+
+
+                                <paper-header-panel id="graph-header" class="graphPanel">
+                                    <div class="paper-header" id="graph-header-header">Water Drain Levels</div>
+                                    <div class="content" style="text-align:center;">
+                                        <svg id="fillgauge" width="200" height="200"></svg>
+                                    </div>
+                                </paper-header-panel>
+
+
+                                <paper-header-panel id="graph-header" class="graphPanel">
+                                    <div class="paper-header" id="graph-header-header">Traffic Incidents</div>
+                                    <div class="content" id="traffic-incidents" style="margin-left: -15px">
+                                    </div>
+                                </paper-header-panel>
+
+                                <paper-header-panel id="graph-header" class="graphPanel" style="height:570px">
+                                    <div class="paper-header" id="graph-header-header">Polyclinics Patients Waiting</div>
+                                    <div class="content" id="polyclinics-times" style="margin-left: -15px;">
+                                    </div>
+                                </paper-header-panel>
+
+                            </div>
+
+                        </iron-pages>
+                    </div>
+
+                </paper-header-panel>
+
+            </div>
+
+            <div main>
+                <div id="map">
+                </div>
+            </div>
+
+        </paper-drawer-panel>
+        
+        <div id="slideshowList" style="display:none">
+            
+        </div>
+    </template>
+    <script>
+
+        Polymer({
+            is: "main-app",
+            ready: function() {
+                //Create a new instance of the word cloud visualisation.
+                myWordCloud = wordCloud('#tag-cloud');
+
+                //Start cycling through the demo data
+                showNewWords();
+
+                //Values of tweets/instagrams + water levels
+                //Constantly updating
+                drawGraph('#twit-graph', function() {
+                    return Object.keys(shownTweetLayers).length + Object.keys(shownInstaLayers).length;
+                });
+                //Draw water level in fill gauge 
+                waterGauge = drawFillGauge('fillgauge', 0.35);
+                updateGauge();
+                
+            },
+            properties: {
+                selected: {
+                    type: Number,
+                    value: 0
+                }
+            }
+        });
+    </script>
+    <style>
+    
+        paper-dialog > * {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        #graph-header {
+            margin: 5px;
+            height: 300px;
+            padding: 0;
+        }
+        
+        #graph-header-header {
+            height: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 50px;
+            padding: 0 10px;
+            color: white;
+            transition: height 0.2s;
+        }
+        
+        #graph-header-content {
+            overflow: hidden;
+        }
+        
+        .graphPanel {
+            margin: 0;
+            padding: 0;
+            background: white;
+            width: 275px;
+        }
+        
+        .graphPanel .paper-header {
+            background-color: #42A5F5;
+        }
+        
+        .graph {
+            margin-left: 1em;
+        }
+        
+        .graph .axis {
+            stroke-width: 0.3em;
+            font-size: 3px;
+            background: white;
+            z-index: 100;
+        }
+        
+        .graph .axis .tick line {
+            fill: none;
+            stroke: black;
+        }
+        
+        .graph .axis .tick text {
+            fill: black;
+            font-size: 12px;
+        }
+        
+        .graph .axis .domain {
+            fill: none;
+            stroke: black;
+        }
+        
+        .graph .group {
+            fill: none;
+            stroke: black;
+            stroke-width: 3px;
+        }
+        
+        .leaflet-container path {
+            transition: fill .75s;
+        }
+        
+        #fillgauge {
+            padding-top: 15px;
+        }
+        
+        #weather {
+            padding-top: 5px;
+        }
+        
+        .dc-chart g.row text {
+            fill: black !important;
+        }
+    </style>
+</dom-module>
