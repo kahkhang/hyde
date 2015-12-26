@@ -11,11 +11,13 @@
   },
   "scripts": {
     "start": "NODE_PATH=./config:./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
-    "test": "make test"
+    "test": "make test",
+    "postinstall": "HOME=$OPENSHIFT_REPO_DIR/public bower install || bower install"
   },
   "dependencies": {
     "async": "latest",
     "body-parser": "^1.8.2",
+    "bower": "^1.4.1",
     "cheerio": "^0.19.0",
     "compression": "^1.1.0",
     "connect-flash": "^0.1.1",
