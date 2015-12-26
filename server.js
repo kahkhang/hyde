@@ -26,7 +26,7 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  mongoose.connect('mongodb://'+connection_string, options);
+  mongoose.connect('mongodb://'+connection_string + "?authSource=admin", options);
 };
 connect();
 
