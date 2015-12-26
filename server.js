@@ -31,7 +31,7 @@ fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
 // Bootstrap application settings
 require('./config/express')(app);
 
-server.listen(port);
+server.listen(port, process.env.OPENSHIFT_NODEJS_IP);
 console.log('Express app started on port ' + port);
 
 // Twitter Feed
