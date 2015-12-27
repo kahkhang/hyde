@@ -6,8 +6,8 @@ data in a larger information environment to facilitate real-time situation decis
 
 Built with Google Polymer, Node.js, MongoDB and D3.js
 
-Currently hosted on Cloud9: 
-http://hackathon-kahkhang.c9.io/
+Currently hosted on OpenShift: 
+http://hyde-kahkhang.rhcloud.com/
 
 Hackathon@SG Open Category Finalist Submission: https://ideas.ecitizen.gov.sg/a/pages/hackathon-at-sg-2015
 
